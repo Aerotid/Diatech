@@ -1,0 +1,91 @@
+@import "../../common/typography-mixins";
+
+.sandwich-menu-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  background: rgba(0, 0, 0, 0);
+
+  &__line {
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    margin-top: 5px;
+    transition: transform .25s;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &:hover &__line:first-child {
+    transform: translateY(-2px);
+  }
+  &:hover &__line:last-child {
+    transform: translateY(2px);
+  }
+
+  &__text {
+    @include font-1;
+    margin-left: 10px;
+
+    @media screen and (max-width: $breakpoint-x) {
+      display: none;
+    }
+
+    //@media screen and (max-width: $breakpoint-2 - 1) {
+    //  font-size: 14px;
+    //}
+  }
+
+  .contrast_header & {
+    &__line {
+      background-color: white;
+    }
+    &__text {
+      color: white;
+    }
+  }
+}
+
+.menu--show {
+  overflow: hidden!important;
+  body {
+    overflow: hidden!important;
+  }
+  .sandwich-menu-button {
+    &__line {
+      margin-top: -3px;
+      background-color: black;
+
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+    &__text {
+      color: black;
+    }
+
+    &:hover {
+
+      .sandwich-menu-button__line:first-child {
+        transform: rotate(45deg);
+      }
+      .sandwich-menu-button__line:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .fp-scrollable .footer,
+  .menu_reviews .footer {
+    bottom: auto;
+    top: 100vh;
+    margin-top: -72px;
+  }
+  .footer {
+    position: fixed;
+  }
+}

@@ -1,0 +1,181 @@
+include ../../components/two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin map-info(attrs)
+
+        -
+            var projectCountries = [
+            {
+            id: 'RU',
+            name: 'Poccия',
+            link: '/reviews.html',
+            link_text: 'Отзывы',
+            selected: 'true',
+            projects : [
+                {
+                name: 'Роснефть',
+                link: '#'
+                },
+
+                {
+                name: 'Газпром',
+                link: '#'
+                },
+                {
+                name: 'Лукойл',
+                link: '#'
+                },
+
+                {
+                name: 'Русснефть',
+                link: '#'
+
+                },
+
+                {
+                name: 'Трансаммиак',
+                link: '#'
+                },
+
+                {
+                name: 'Министерство обороны',
+                link: '#'
+                },
+
+                {
+                name: 'Орский НПЗ',
+                link: '#'
+                }
+            ]
+
+            },
+            {
+            id: 'KZ',
+            name: 'Казахстан',
+            projects : [
+            {
+            name: 'Байконурэнерго',
+            link: '#'
+            }
+            ]
+
+            },
+
+            {
+            id: 'UZ',
+            name: 'Узбекистан',
+            projects : [
+                {
+            name: 'Лукойл Узбекистан',
+            link: '#'
+                    }
+                ]
+
+            },
+
+            {
+            id: 'BR',
+            name: 'Бразилия',
+            projects : [
+            {
+            name: 'Petrobras',
+            link: '#'
+            }
+            ]
+            },
+
+            {
+            id: 'UA',
+            name: 'Украина',
+            projects : [
+            {
+            name: 'Байконурэнерго',
+            link: '#'
+            }
+            ]
+
+            },
+
+            {
+            id: 'AO',
+            name: 'Ангола',
+            projects : [
+            {
+            name: 'Total E&P',
+            link: '#'
+            }
+            ]
+
+            },
+
+            {
+            id: 'DZ',
+            name: 'Алжир',
+            projects : [
+            {
+            name: 'Sonatrach',
+            link: '#'
+            }
+            ]
+
+            },
+
+            {
+            id: 'ES',
+            name: 'Испания',
+            projects : [
+            {
+            name: 'BP',
+            link: '#'
+            },
+
+            {
+            name: 'Repsol',
+            link: '#'
+            },
+
+            {
+            name: 'CEPSA',
+            link: '#'
+            },
+
+            {
+            name: 'CLH',
+            link: '#'
+            }
+            ]
+
+            },
+            {
+            id: 'FR',
+            name: 'Франция',
+            projects : [
+            {
+            name: 'Total',
+            link: '#'
+            }
+            ]
+
+            }
+
+            ]
+
+
+        .map-info&attributes(attrs)
+            each projectCountry in projectCountries
+                .map-info__content(data-info=projectCountry.id)
+                        +two-columns({class: 'two-columns_100'})
+                            +set('left')
+                                .map-info__contain
+                                    .map-info__title!= projectCountry.name
+                                    if(projectCountry.link)
+                                        a(href= projectCountry.link).map-info__link!= projectCountry.link_text
+                            +set('right')
+                                .map-info__contain
+                                    .map-info__list-title Заказчик:
+                                    while projectCountry.projects.length > 0
+                                        .map-info__row
+                                            for project in projectCountry.projects.splice(0, 4)
+                                                a(href=project.link).map-info__item!= project.name
+
+

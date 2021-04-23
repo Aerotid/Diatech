@@ -1,0 +1,98 @@
+@import '../slider-navigation/slider-navigation';
+@import '../power-lines/variables';
+@import '../../common/mixins';
+
+.main-slider {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+    background-color: rgba(255,255,255,.5);
+    opacity: 0;
+    visibility: hidden;
+
+    @media (max-width: $breakpoint-4 - 1) {
+      display: block;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    z-index: 3;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__press-and-hold {
+    position: absolute;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__info-block-3 {
+    @include section-top-offset;
+    padding-right: 100px;
+    position: absolute;
+    z-index: 10;
+    left: $power-line-offset;
+
+    @media only screen and (max-width: $breakpoint-x) {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-4 - 1) {
+    &__navigation {
+      margin-left: -20px;
+      transform: translateX(-100%);
+    }
+
+    &__press-and-hold {
+      top: auto;
+      right: auto;
+      bottom: 15px;
+      left: 50%;
+      flex-direction: row;
+      margin-left: 20px;
+      transform: translate(0%, 0%);
+    }
+
+    & .press-and-hold__text {
+      margin-top: 0;
+      margin-left: 15px;
+      font-size: 12px;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-x) and (orientation: portrait) {
+    &__navigation {
+      bottom: 5%;
+      margin-left: 0;
+      transform: translateX(-50%);
+    }
+    &__press-and-hold {
+      bottom: 8%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      margin-left: 0;
+      transform: translateY(-50%);
+      //transform: translateX(-50%);
+    }
+    & .press-and-hold__text {
+      margin-top: 15px;
+      margin-left: 0;
+      font-size: 12px;
+    }
+  }
+}

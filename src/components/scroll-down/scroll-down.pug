@@ -1,0 +1,5 @@
+mixin scroll-down(attrs, light)
+    if light
+        img.scroll-down(src='../../images/arrow-down-light.png')&attributes(attrs)
+    else
+        img.scroll-down(src='../../images/arrow-down.png')&attributes(attrs)

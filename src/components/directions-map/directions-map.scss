@@ -1,0 +1,190 @@
+@import "../../common/typography-mixins";
+@import '../../common/variables';
+@import '../../components/power-lines/variables';
+
+.directions-map {
+  position: relative;
+  padding: 0 $power-line-offset;
+  margin-top: smooth-value(255px, 75px, $breakpoint-2, $fhd-width, 'w');
+  margin-bottom: 100px;
+
+  @media (max-width: $breakpoint-2) {
+    margin-top: 255px;
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    margin-top: 255px;
+    margin-bottom: 90px; 
+  }
+
+  &__container {
+    //overflow-x: overlay;
+    //overflow-y: hidden;
+  }
+  &__inner-wrapper {
+    position: relative;
+    //width: 1800px;
+    height: smooth-value(433px, 813px, $breakpoint-3, $fhd-width, 'w');
+    //overflow: hidden;
+
+    @media only screen and (max-width: $breakpoint-x) and (orientation: landscape) {
+      height: calc(100vh - 100px);
+    }
+  }
+  &__bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &__bg {
+    //position: absolute;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  &__pins {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    //padding-top: 180px;
+  }
+  &__pin {
+    position: absolute;
+    z-index: 1;
+    width: smooth-value(28px, 57px, $breakpoint-2, $fhd-width, 'w');
+    height: smooth-value(28px, 57px, $breakpoint-2, $fhd-width, 'w');
+    margin: smooth-value(-14px, -28px, $breakpoint-2, $fhd-width, 'w') 0 0 smooth-value(-14px, -28px, $breakpoint-2, $fhd-width, 'w');
+    padding: 0;
+    border: 0;
+    background: url('../images/directions/pin.png') no-repeat center;
+    -webkit-background-size: contain;
+    background-size: contain;
+    cursor: pointer;
+    transition: .5s ease-out;
+    outline: none;
+
+    @media (max-width: $breakpoint-2) {
+      width: 28px;
+      height: 28px;
+      margin: -14px 0 0 -14px;
+    }
+
+    &:hover,
+    &_active {
+      background: url('../images/directions/pin-hover.png') no-repeat center;
+      -webkit-background-size: contain;
+      background-size: contain;
+      transition: .5s ease-out;
+    }
+  }
+  &__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: none;
+    align-items: flex-start;
+    //width: 100%;
+    min-height: 165px;
+    margin: smooth-value(-180px, 0px, $breakpoint-2, $fhd-width, 'w') smooth-value(0px, 127px, $breakpoint-4, $fhd-width, 'w') 0;
+    padding: smooth-value(15px, 26px, $breakpoint-3, $fhd-width, 'w') smooth-value(32px, 64px, $breakpoint-3, $fhd-width, 'w');
+    background-color: $color-3;
+
+    @media (max-width: $breakpoint-4) {
+      margin: smooth-value(-165px, 0px, $breakpoint-2, $fhd-width, 'w') 0 0;
+    }
+
+    @media (max-width: $breakpoint-3) {
+      flex-wrap: wrap;
+      padding: 15px $fhd-col-width / 2;
+    }
+
+    @media (max-width: $breakpoint-2) {
+      margin-top: -165px;
+    }
+
+    @media only screen and (max-width: $breakpoint-x) and (orientation: landscape) {
+      margin-top: -100px;
+      min-height: 145px;
+    }
+
+    &-title {
+      margin-right: 25px;
+      max-width: 215px;
+      @include font-17;
+      color: white;
+
+      @media (max-width: $breakpoint-4) {
+        font-size: smooth-value(18px, 24px, $breakpoint-2, $breakpoint-4, 'w');
+      }
+
+      @media (max-width: $breakpoint-3) {
+        margin-right: 0;
+        max-width: 100%;
+      }
+
+      @media (max-width: $breakpoint-2) {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+    &-block {
+      width: 840px;
+      margin-left: auto;
+
+      &-title {
+        margin: 0;
+        @include font-18;
+        color: white;
+
+        @media (max-width: $breakpoint-4) {
+          font-size: smooth-value(10px, 14px, $breakpoint-2, $breakpoint-4, 'w');
+        }
+        @media (max-width: $breakpoint-2) {
+          font-size: 10px;
+        }
+      }
+    }
+    &-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: myCounter;
+    }
+    &-item {
+      @include font-14;
+      line-height: 28px;
+      color: white;
+
+      &:before {
+        counter-increment: myCounter;
+        content:counter(myCounter);
+        display: inline-block;
+        margin-right: 10px;
+        color: white;
+      }
+
+      @media (max-width: $breakpoint-4) {
+        font-size: smooth-value(10px, 14px, $breakpoint-2, $breakpoint-4, 'w');
+        line-height: 1.5;
+      }
+    }
+    &_active {
+      display: flex;
+    }
+    &_center {
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+
+      & .directions-map__card-title {
+        max-width: none;
+      }
+    }
+  }
+}

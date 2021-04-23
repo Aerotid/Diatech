@@ -1,0 +1,45 @@
+.title {
+  margin: 0;
+  &_404 {
+    display: flex;
+
+    align-items: center;
+    @include title-6;
+    color: $color-3;
+
+    @media screen and (max-width: $breakpoint-2) {
+      flex-wrap: wrap;
+      font-size: 50px;
+    }
+
+    span {
+      margin-right: 10px;
+
+      &:last-child {
+        @include font-4;
+        text-transform: initial;
+        color: #000;
+        margin-left: smooth-value(0px, 60px, $breakpoint-2, $fhd-width, 'w');
+        margin-right: smooth-value(0px, 300px, $breakpoint-2, $fhd-width, 'w');
+
+        @media screen and (max-width: $breakpoint-2) {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+.link__container {
+  border-left: 3px solid $color-5;
+
+  @media screen and (max-width: $breakpoint-2) {
+    margin-top: 25px;
+  }
+
+  .link {
+    padding-left: 18px;
+    @include font-14;
+    line-height: 30px;
+  }
+}

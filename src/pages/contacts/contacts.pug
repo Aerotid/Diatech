@@ -1,0 +1,70 @@
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/info-block-1/info-block-1
+include ../../components/info-block-4/info-block-4
+include ../../components/inner-first-screen/inner-first-screen
+include ../../components/form/form
+include ../../components/map/map
+include ../../components/two-columns/two-columns
+include ../../common/multiple-blocks
+include ../../components/adjacent-pages/adjacent-pages
+include ../../components/power-lines/power-lines
+include ../../components/scroll-up/scroll-up
+include ../../components/preloader/preloader
+include ../../components/scroll-down/scroll-down
+include ../../components/scroll-up/scroll-up
+
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../images/favicons/ru/icon-16.png')
+        link(rel='icon' type='image/png' sizes='48x48' href='../../images/favicons/ru/icon-48.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='../../images/favicons/ru/icon-96.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='../../images/favicons/ru/icon-192.png')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+    body
+        +sandwich-menu
+        #barba-wrapper
+            .barba-container(data-namespace='contacts')
+                +header
+                div#fullpage
+                    .section
+                        +power-lines
+                        +inner-first-screen('Контакты', null, {class: 'info-block-4_position-top-left'}, '<div data-text-part><a href="tel:+74951354400">+7 495 135 44 00</a></div>' +
+                        ' <div data-text-part><a href="mailto:info@diatech.ru">info@diatech.ru</a></div>', null, null, {class: 'inner-first-screen_transparent-bg'})
+                            +set('bottom')
+                                +two-columns
+                                    +set('left')
+                                        +info-block-1(null, '123056, <br>Россия, Москва, ул. Большая Грузинская, 32 строение 2', null, null, {class: 'info-block-1_contacts'})
+
+                                    +set('right')
+                                        +info-block-1(null, null, 'Мы принимаем звонки с 9:00 до 18:00 по будням', null, {class: 'info-block-1_contacts'})
+                                +scroll-down({class: 'inner-first-screen__scroll-down'})
+                    .section
+                        .tail
+                            .container-page
+                                +two-columns
+                                    +set('left')
+                                        +info-block-1('<div data-text-part>Как</div><div data-text-part>добраться</div>', '', null, {})
+                                +map
+                            .container-page
+                                +two-columns
+                                   +set('left')
+                                        +info-block-1('<div data-text-part>Свяжитесь</div><div data-text-part>c нами</div>', '', null, {}, {class: 'main-first-screen__info-block-1'})
+
+                                +two-columns({class: 'two-columns_col-right-pl two-columns_col-right-pr'})
+                                    +set('left')
+                                        +info-block-1('', 'Задайте Ваш вопрос или оставьте email, чтобы получить предложение к сотрудничеству.', null, {}, {class: 'main-first-screen__info-block-1'})
+                                    +set('right')
+                                        +form
+
+                            +adjacent-pages(
+                            {bg: '../../images/adjacent/contacts.jpg', name: 'Отзывы', href: '/reviews.html'},
+                            {bg: '../../images/adjacent/cases.jpg', name: 'О компании', href: '/company.html'}
+                            )
+                            +scroll-up({class: 'tail__scroll-up'})
+                +footer
+        +preloader
+
+

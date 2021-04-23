@@ -1,0 +1,108 @@
+@import '../../common/typography-mixins';
+@import '../../common/variables';
+
+.map-info {
+  padding: 30px $fhd-col-width;
+  background: $color-3;
+  height: 150px;
+  box-sizing: border-box;
+  color: white;
+  @include font-15;
+  color: white;
+
+  @media screen and (max-width: $breakpoint-4 - 1) {
+    height: auto;
+    max-height: 290px;
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    padding-left: $mobil-col-width;
+    padding-right: $mobil-col-width;
+  }
+
+  &__content {
+    height: auto;
+    display: none;
+
+    &[data-info=RU] {
+      display: block;
+    }
+  }
+
+  &__contain {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__title {
+    @include font-17;
+    color: white;
+    
+    @media screen and (max-width: 1238px) {
+      height: auto;
+    }
+  }
+
+  &__link {
+    @include font-15;
+    line-height: 28px;
+    color: white;
+
+    @media screen and (max-width: 1238px) {
+      height: auto;
+    }
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      line-height: 2;
+    }
+  }
+
+  &__list-title {
+    line-height: 28px;
+
+    @media screen and (max-width: 1238px) {
+      margin-bottom: 15px;
+    }
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      line-height: 2;
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    @media screen and (max-width:  1238px) {
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+  }
+
+  &__item {
+    @include  font-14;
+    line-height: 28px;
+    color: white;
+    padding-right: 12px;
+    position: relative;
+
+    @media screen and (max-width: $breakpoint-4 - 1) {
+      line-height: 1.5;
+    }
+
+    &:after {
+      content: '/';
+      color: white;
+      display: block;
+      position: absolute;
+      right: 3px;
+      top: 0;
+
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+  }
+}

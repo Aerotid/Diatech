@@ -1,0 +1,11 @@
+include ../radiance/radiance
+
+mixin preloader(attrs)
+    .preloader&attributes(attrs)
+        //.preloader__title Загрузка...
+        .vertical-centered-box
+            .content
+                .loader-circle
+                .loader-line-mask
+                    .loader-line
+        +radiance

@@ -1,0 +1,87 @@
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/case-top/case-top
+include ../../components/info-block-1/info-block-1
+include ../../components/inner-first-screen/inner-first-screen
+include ../../components/img-block/img-block
+include ../../components/two-columns/two-columns
+include ../../common/multiple-blocks
+include ../../components/power-lines/power-lines
+include ../../components/preloader/preloader
+include ../../components/adjacent-pages/adjacent-pages
+include ../../components/scroll-up/scroll-up
+
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../images/favicons/ru/icon-16.png')
+        link(rel='icon' type='image/png' sizes='48x48' href='../../images/favicons/ru/icon-48.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='../../images/favicons/ru/icon-96.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='../../images/favicons/ru/icon-192.png')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+    body
+        +sandwich-menu
+        #barba-wrapper
+            .barba-container(data-namespace='case')
+                +header({class: 'contrast_header'})
+                +power-lines
+
+                .section.contrast
+                    +inner-first-screen('Вернуться к кейсам', '/cases.html#case_cuulong', {class: 'info-block-4_position-right-center'}, '<span data-title-item-anim>Райзер</span><br><span data-title-item-anim>на нефтяной</span> <br><span data-title-item-anim>платформе</span>', '<span data-title-item-anim>Cuulong, Вьетнам</span>', '../../images/cases/case_cuulong_main_img.jpg', {class: 'inner-first-screen_height-100vh'})
+                    +power-lines
+
+                //+case-top('<div data-text-part>Сосуды под</div><div data-text-part>давлением на</div><div data-text-part>судне FPSO</div>', 'Total E&P, Ангола', '../../images/cases/case_descr_img-total.jpg', {url: '#', anchor: 'Вернуться к кейсам'})
+                .container-inner
+                    .container-page
+                        .container_case-inner
+                            +two-columns
+                                +set('left')
+                                    +info-block-1('<div data-text-part>проведение </div><div data-text-part>технической </div><div data-text-part>диагностики </div>', '', null, {})
+
+                            +two-columns
+                                +set('left')
+                                    +info-block-1('', 'Вьетнамская нефтяная компания ' +
+                                    'Cuu Long Joint Operation&nbsp;Co., являющаяся оператором разработки месторождения на&nbsp;шельфе ' +
+                                        'Южно-Китайского моря объявила тендер на&nbsp;проведение технической диагностики 22&nbsp;участков райзеров ' +
+                                        'на&nbsp;2&nbsp;нефтедобывающих платформах', '', null, {class: 'info-block-1_no-max-width'})
+                                +set('right')
+                                    +info-block-1('', '', 'Стартовый проект включал 3&nbsp;участка трубопровода, диагностику которых необходимо было провести без привлечения водолазов для обследования сегмента на&nbsp;границе воды и&nbsp;воздуха, а&nbsp;также подводной части трубопровода. ДИАТЕХ успешно реализовал проект', null, {class: 'info-block-1_no-max-width'})
+
+                            +img-block('../../images/cases/case_cuulong_descr_img.jpg', {class: 'img-block_no-height'}, '<div class="img-block__text ' +
+                            'img-block__text_cuulong-1">Планарный режим</div>')
+                        .container_case-inner
+                            +two-columns
+                                +set('left')
+                                    +info-block-1('<div data-text-part>Требования</div>', '', null, {})
+
+                            +two-columns
+                                +set('left')
+                                    +info-block-1(null, null, '<p>Диагностика без остановки процесса добычи и&nbsp;транспортировки нефти</p> <p>Отказ от&nbsp;водолазных работ</p> <p>Односторонний доступ к&nbsp;трубе на&nbsp;всех участках</p>', null)
+                                +set('right')
+                                    +info-block-1(null, null, '<p>Обследование с&nbsp;применением альпинистской оснастки</p> <p>Сжатые сроки на&nbsp;подготовку тендерной документации и&nbsp;плана проекта, а&nbsp;также мобилизацию группы</p>', null)
+
+                        .container_case-inner
+                            +two-columns
+                                +set('right')
+                                    +info-block-1('<div data-text-part>Реализация</div>', '', null, {})
+
+                            +two-columns
+                                +set('left')
+                                    +info-block-1(null, null, '<p>Срок реализации проекта, включая подготовку отчётов по&nbsp;3&nbsp;участкам составил 7&nbsp;дней, рабочая группа включала 4&nbsp;специалиста</p>' +
+                                    '<p>Диагностика проведена без остановки работы объекта и&nbsp;изменения режима эксплуатации</p>' +
+                                    '<p>Применение метода фононной диагностики в&nbsp;планарном режиме позволило обследовать подводную часть трубопровода без проведения водолазных работ</p>', null, {class: 'info-block-1_no-max-width'})
+
+                                +set('right')
+                                    +info-block-1(null, null, '<p>Специалисты по фононной диагностике имеют разрешения на альпинистские работы, что позволило сократить издержки на дополнительную рабочую силу и мобилизацию группы</p> <p>Квалифицированные специалисты и мобильное оборудование позволили в кратчайшие сроки организовать мобилизацию группы</p>' +
+                                    '<p>Компактность оборудования упростила процедуру пропуска и&nbsp;перемещения группы на&nbsp;платформу, а&nbsp;также не&nbsp;потребовало подготовки площадки для обследования</p>' +
+                                    '<p>В&nbsp;результате проведенной диагностики было выявлено 48&nbsp;дефектов различной степени опасности</p>', null, {class: 'info-block-1_no-max-width'})
+
+
+                    +adjacent-pages(
+                        {bg: '../../images/cases/case_gazprom_main_img.jpg', name: 'Газпром, <br>Россия', href: '/case_gazprom.html', text: 'Предыдущий кейс'},
+                        {bg: '../../images/cases/case_total_main_img.jpg', name: 'Total E&P, <br>Ангола', href: '/case_total.html', text: 'Следующий кейс'}
+                    )
+                    +scroll-up
+                +footer
+        +preloader

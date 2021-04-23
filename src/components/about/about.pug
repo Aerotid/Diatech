@@ -1,0 +1,25 @@
+include ../info-block-1/info-block-1
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin about(title, text, col11, col12, col13, col14, col21, attrs)
+    .about&attributes(attrs)
+        +info-block-1('<div>Научно-</div><div>производствен&shy;ная</div><div>фирма ДИАТЕХ</div>', 'Оказывает услуги технической диагностики и&nbsp;экспертизы промышленной ' +
+        'безопасности, разрабатывает технологии неразрушающего контроля с&nbsp;1997&nbsp;года.', '', '', {class: 'about__info-block-1'})
+        .about__wrapper
+            +two-columns
+                +set('left')
+                    .about__grid.about__grid_left
+                        .about__row
+                            .about__col.about__col_1 ДИАТЕХ аккредитован ведущими компаниями нефтегазового сектора
+                            .about__col.about__col_2 ДИАТЕХ и технологии компании представлены партнерами в 13 странах мира, в Европе, в Азии, на Ближнем Востоке и в Африке
+                +set('right')
+                    .about__grid.about__grid_right
+                        .about__row
+                            .about__col.about__col_3 ISO
+                            .about__col.about__col_4 Система менеджмента компании сертифицирована в&nbsp;соответствии с&nbsp;международным стандартом качества ISO 9001:2008
+            +two-columns
+                +set('left')
+                    .about__grid.about__grid_left
+                        .about__row
+                            .about__col.about__col_1 Штат ДИАТЕХ - это сертифицированные специалисты, в том числе эксперты высшей категории в различных областях

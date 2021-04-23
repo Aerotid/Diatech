@@ -1,0 +1,24 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+include ../case/case
+
+mixin cases
+    .cases
+        .cases__title Кейсы
+        .cases__items
+            +two-columns({class: 'cases__two-columns'})
+                +set('left')
+                    +case('../../images/cases/case_gazprom_main_img.jpg', 'газпром<br>Россия', 'ПОДВОДНЫЙ ПЕРЕХОД ЧЕРЕЗ РЕКУ КАМу', 'За&nbsp;счет мобильности фононного ' +
+                    'оборудования, используя систему синхронизации, ДИАТЕХ провёл диагностику одновременно 9&nbsp;ниток трубопровода.', {class: 'cases__case'})
+            +two-columns({class: 'cases__two-columns'})
+                +set('right')
+                    +case('../../images/cases/case_cuulong_main_img.jpg', 'CUULONG<br>ВЬЕТНАМ', 'РАЙЗЕР НА&nbsp;НЕФТЯНОЙ ПЛАТФОРМЕ', 'Наиболее существенным требованием был отказ' +
+                    ' от&nbsp;водолазных работ.<br>Компания ДИАТЕХ победила в&nbsp;тендере на&nbsp;проведение диагностики райзера.<br>Метод фононной диагностики был успешно ' +
+                    'применен в&nbsp;условиях одностороннего доступа к&nbsp;трубе.', {class: 'case_shifted-top cases__case'})
+            +two-columns({class: 'cases__two-columns'})
+                +set('left')
+                    +case('../../images/cases/case_total_main_img.jpg', 'TOTAL<br>АНГОЛА', 'СОСУДЫ ПОД ДАВЛЕНИЕМ НА&nbsp;СУДНЕ FPSO', 'Обследование проводилось на&nbsp;' +
+                    'нефтедобывающем судне. Диагностика с&nbsp;применением фононного метода двух сосудов под давлением была произведена без опорожнения сосудов и&nbsp;без ' +
+                    'изменения рабочего режима эксплуатации.', {class: 'cases__case'})
+                +set('right')
+                    a.cases__show-all(href="/cases.html", data-link-type='inner') смотреть все кейсы

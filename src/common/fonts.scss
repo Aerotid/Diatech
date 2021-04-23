@@ -1,0 +1,41 @@
+@import './variables';
+
+@font-face {
+  font-family: $font-avenir-next-cyr;
+  src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Regular.woff') format('woff'),
+  url('../fonts/AvenirNextCyr/AvenirNextCyr-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: $font-avenir-next-cyr-medium;
+  src:  url('../fonts/AvenirNextCyr/AvenirNextCyr-Medium.woff') format('woff'),
+        url('../fonts/AvenirNextCyr/AvenirNextCyr-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: $font-avenir-next-cyr-bold;
+  src:  url('../fonts/AvenirNextCyr/AvenirNextCyr-Bold.woff') format('woff'),
+  url('../fonts/AvenirNextCyr/AvenirNextCyr-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: $font-bebas-neue;
+  src:  url('../fonts/BebasNeue/BebasNeueRegular.woff') format('woff'),
+  url('../fonts/BebasNeue/BebasNeueRegular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: $font-bebas-neue-bold;
+  src:  url('../fonts/BebasNeue/BebasNeueBold.woff') format('woff'),
+  url('../fonts/BebasNeue/BebasNeueBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}

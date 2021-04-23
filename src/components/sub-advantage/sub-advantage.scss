@@ -1,0 +1,36 @@
+@import '../../common/typography-classes';
+
+.sub-advantage {
+  min-height: 140px;
+
+  &_mobile {
+    display: none;
+  }
+
+  &:first-child {
+    //margin-bottom: 130px;
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      margin-bottom: 0;
+    }
+  }
+  &__number {
+    @include font-11;
+    font-size: 24px;
+  }
+
+  &__text {
+    @include font-5;
+    margin-top: 10px;
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    margin-left: $mobil-col-width;
+  }
+
+  @media screen and (max-width: $breakpoint-2) {
+    &_mobile {
+      display: block;
+    }
+  }
+}

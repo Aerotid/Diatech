@@ -1,0 +1,5 @@
+- var blocks = {};
+- function createBlock(key) { if (blocks[key]) { blocks[key]() } }
+- function clearBlocks(keys) { for(var i = 0; i < keys.length; ++i) { blocks[keys[i]] = null; } }
+mixin set(key)
+    - blocks[key] = this.block

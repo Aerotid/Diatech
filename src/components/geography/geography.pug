@@ -1,0 +1,17 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+include ../info-block-1/info-block-1
+include ../clients/clients
+include ../objects-map-preview/objects-map-preview
+
+mixin geography(attrs)
+    .geography&attributes(attrs)
+        +two-columns
+            +set('right')
+                +info-block-1('География работ', '', 'ДИАТЕХ ведет работу в&nbsp;крупнейших нефтегазовых районах России. Компания оказывает услуги клиентам в&nbsp;22&nbsp;странах мира.', null, {class: 'geography__info-block-1'})
+    .geography.geography__mobile
+        +two-columns({class: 'geography__bottom'})
+            +set('left')
+                +clients
+            +set('right')
+                +objects-map-preview

@@ -1,0 +1,38 @@
+@import '../../common/variables';
+@import '../../common/functions';
+
+$power-lines-color: rgba(229, 229, 229, 0.5);
+$fhd-power-line-offset: 255px;
+// $power-line-offset: calc(#{smooth-value(
+//   $horizontal-border-offset-min,
+//   $fhd-power-line-offset,
+//   $breakpoint-1,
+//   $fhd-width,
+//   'w'
+// )});
+
+$power-line-offset: calc(#{smooth-value(
+  50px,
+  $fhd-power-line-offset,
+  $breakpoint-1-max,
+  $fhd-width,
+  'w'
+)});
+
+
+$power-line-offset-mobile: calc(#{smooth-value(
+  30px,
+  50px,
+  $breakpoint-1,
+  $breakpoint-1-max,
+  'w'
+)});
+
+
+$power-line-offset-mobile-invert: calc(#{smooth-value(
+  -30px,
+  -50px,
+  $breakpoint-1,
+  $breakpoint-1-max,
+  'w'
+)});

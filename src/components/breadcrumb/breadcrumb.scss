@@ -1,0 +1,26 @@
+@import '../../common/variables';
+@import '../../common/typography-mixins';
+
+.breadcrumb {
+  display: flex;
+  margin-left: smooth-value(20px, 65px, $breakpoint-2, $fhd-width, 'w');
+  //transition: opacity .5s ease-out,visibility .5s ease .5s;
+  visibility: hidden;
+  opacity: 0;
+
+  &__item {
+    @include font-15;
+  }
+
+  @media (max-width: $breakpoint-2 - 1) {
+    display: none;
+  }
+}
+
+.menu--show {
+  .breadcrumb {
+    //transition: opacity .5s ease-out,visibility 0s ease;
+    //visibility: visible;
+    //opacity: 1;
+  }
+}

@@ -1,0 +1,67 @@
+@import '../../common/variables';
+@import '../../common/typography-mixins';
+@import '../../common/bootstrap';
+@import '../power-lines/variables';
+@import '../../common/mixins';
+
+.contacts {
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+  margin-top: 180px;
+  padding-bottom: 290px;
+
+  &__title {
+    @include title-1;
+  }
+
+  &__left {
+    padding: 0 smooth-value($mobil-col-width, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+  }
+
+  &__right {
+    @include font-12;
+    @include plant-on-power-line;
+    position: relative;
+    z-index: 1;
+    border-left: $title-border;
+    padding: $title-vertical-offset smooth-value($mobil-col-width, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+  }
+
+  &__more {
+    margin-top: $link-offset;
+    display: inline-block;
+  }
+
+  @media (max-width: $breakpoint-3 - 1) {
+    & .two-columns__column {
+      @include make-col(12);
+
+      &_right {
+        margin-top: 40px;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-2 - 1) {
+    padding-bottom: 120px;
+    margin-top: 80px;
+
+    &__left {
+      border-left: $title-border;
+      padding-top: $mobil-col-width;
+      padding-bottom: $mobil-col-width;
+    }
+    &__right {
+      border-left: none;
+    }
+    &__more {
+      margin-top: 0;
+    }
+
+    & .two-columns__column {
+
+      &_right {
+        margin-top: 0;
+      }
+    }
+  }
+}

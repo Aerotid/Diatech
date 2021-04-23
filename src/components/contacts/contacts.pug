@@ -1,0 +1,13 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+include ../info-block-1/info-block-1
+
+mixin contacts
+    .contacts
+        +two-columns({class: 'contacts__two-columns'})
+            +set('left')
+                .contacts__title.contacts__left Контактная информация
+            +set('right')
+                .contacts__right
+                    .contacts__text +7 (495) 135 44 00<br>Москва, ул. Большая Грузинская, 32&nbsp;стр 2<br>info@diatech.ru
+                    a.contacts__more(href='/contacts.html', data-link-type='inner') подробнее

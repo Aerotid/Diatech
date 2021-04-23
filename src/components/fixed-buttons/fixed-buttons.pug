@@ -1,0 +1,7 @@
+mixin fixed-buttons(args)
+    .fixed-buttons&attributes(attributes)
+        .fixed-buttons__container
+            +button().btn_primary.btn_block.btn_outline.btn_watch.fixed-buttons__button
+                span Смотреть видео
+                span Смотреть дальше
+            +button('Подробнее о методе', '/phonon.html').btn_primary.btn_block.fixed-buttons__button(data-link-type='inner')

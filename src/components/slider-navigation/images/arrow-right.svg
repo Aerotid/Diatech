@@ -1,0 +1,6 @@
+<svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" width="26" height="11" viewBox="0 0 27 11">
+    <g transform="translate(1,0)">
+        <path fill-rule="evenodd"
+              d="M20.500,10.450 L19.793,9.742 L23.536,6.000 L-0.000,6.000 L-0.000,5.000 L23.536,5.000 L19.793,1.257 L20.500,0.550 L25.450,5.500 L20.500,10.450 ZM24.000,5.536 L24.036,5.500 L24.000,5.464 L24.000,5.536 Z"/>
+    </g>
+</svg>

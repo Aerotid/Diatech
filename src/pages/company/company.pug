@@ -1,0 +1,53 @@
+include ../../components/preloader/preloader
+include ../../components/inner-first-screen/inner-first-screen
+include ../../components/about/about
+include ../../components/science-activity/science-activity
+include ../../components/clients-full/clients-full
+include ../../components/leadership/leadership
+include ../../components/career/career
+include ../../components/adjacent-pages/adjacent-pages
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/power-lines/power-lines
+include ../../components/scroll-down/scroll-down
+include ../../components/scroll-up/scroll-up
+include ../../common/multiple-blocks
+include ../../components/preloader/preloader
+
+doctype html
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../images/favicons/ru/icon-16.png')
+        link(rel='icon' type='image/png' sizes='48x48' href='../../images/favicons/ru/icon-48.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='../../images/favicons/ru/icon-96.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='../../images/favicons/ru/icon-192.png')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+    body
+        +sandwich-menu
+        #barba-wrapper
+            .barba-container(data-namespace='company')
+                +header({class: 'contrast_header'})
+                div#fullpage
+                    .section.contrast
+                        +inner-first-screen('О&nbsp;компании', null, null, '<div data-text-part>создаём</div><div data-text-part>иннова&shy;ционные</div><div ' +
+                        'data-text-part>техно&shy;логии</div>', 'пробиваясь сквозь предубеждения и&nbsp;стереотипы традиционной диагностики', '../../images/company/company-bg.jpg')
+                            +set('bottom')
+                                +scroll-down({class: 'inner-first-screen__scroll-down'}, true)
+                        +power-lines
+                    .section
+                        .tail
+                            +power-lines
+                            +about
+                            +science-activity
+                            +clients-full
+                            +leadership
+                            +career
+                            +adjacent-pages(
+                                {bg: '../../images/adjacent/contacts.jpg', name: 'контакты', href: '/contacts.html'},
+                                {bg: '../../images/adjacent/cases.jpg', name: 'кейсы', href: '/cases.html'}
+                            )
+                            +scroll-up({class: 'tail__scroll-up'})
+                +footer({class: 'contrast_footer'})
+        +preloader

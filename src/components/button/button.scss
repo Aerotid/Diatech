@@ -1,0 +1,127 @@
+@import '../../common/variables';
+@import '../../common/typography-mixins';
+
+.btn {
+    display: inline-block;
+    outline: none;
+    padding: 0 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn_type-1 {
+    @include font-9;
+    border-left: 3px solid $color-3;
+    border-right: 3px solid transparent;
+    line-height: 30px;
+}
+
+.btn {
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+    &_primary {
+        border: 2px solid $color-3;
+        background-color: $color-3;
+        padding: 8px 18px;
+        @include font-9;
+        color: white;
+        line-height: 30px;
+        text-align: center;
+
+        &:not(.disabled) {
+            &:hover {
+                background-color: lighten($color-3, 10%);
+                border-color: lighten($color-3, 10%);
+            }
+        }
+    }
+
+    &_outline {
+        background-color: transparent;
+        color: $color-3;
+
+        &:not(.disabled) {
+            &:hover {
+                background-color: transparent;
+                color: lighten($color-3, 10%);
+            }
+        }
+    }
+
+    &_watch {
+        position: relative;
+        padding-left: 43px;
+        text-align: left;
+
+        @media (max-width: $breakpoint-2) {
+            padding-right: 43px;
+            text-align: center;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            border: 5px solid transparent;
+            border-right-width: 8px;
+            border-left: 8px solid $color-3;
+            display: block;
+            margin-top: -5px;
+            transition: border-left-color 0.2s;
+        }
+
+        &:not(.disabled) {
+            &:hover {
+                &::before {
+                    border-left-color: lighten($color-3, 10%);
+                }
+            }
+        }
+
+        span {
+            transition: opacity 0.3s;
+            display: inline-block;
+
+            &:first-of-type {
+                position: absolute;
+                left: 43px;
+                opacity: 1;
+
+                @media (max-width: $breakpoint-2) {
+                    left: auto;
+                }
+            }
+
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+        }
+
+        &.show-text {
+            span {
+                &:first-of-type {
+                    opacity: 0;
+                }
+
+                &:nth-of-type(2) {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &_block {
+        margin-bottom: 30px;
+
+        @media (max-width: $breakpoint-4 - 1) {
+            margin-bottom: 5%;
+            text-align: center;
+        }
+    }
+
+    &.disabled {
+        cursor: default;
+    }
+}

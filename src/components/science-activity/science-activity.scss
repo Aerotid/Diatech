@@ -1,0 +1,72 @@
+@import '../../common/typography-mixins';
+@import '../../common/variables';
+@import '../power-lines/variables';
+@import '../../common/mixins';
+
+.science-activity {
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+  margin-top: 250px;
+
+  @media screen and (max-width: $breakpoint-3 - 1) {
+    margin-top: 100px;
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: $breakpoint-1-max) {
+    margin-left: $power-line-offset-mobile;
+    margin-right: $power-line-offset-mobile;
+  }
+
+  &__text {
+    @include font-4;
+    box-sizing: content-box;
+    max-width: 450px;
+    margin-top: 40px;
+    padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      padding-left: $mobil-col-width;
+    }
+  }
+
+  &__sub-text {
+    @include font-6;
+    max-width: 450px;
+    margin-top: 55px;
+    padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+    box-sizing: content-box;
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      padding-left: $mobil-col-width;
+    }
+  }
+
+  & .two-columns__column_left {
+    padding-bottom: 275px;
+    display: flex;
+    align-items: flex-end;
+    padding-right: $fhd-col-width;
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      padding-right: 0;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__image {
+    // height: 400px;
+    width: 100%;
+    // background-color: $color-10;
+
+    img {
+      max-width: 100%;
+    }
+
+    
+  }
+}

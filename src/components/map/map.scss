@@ -1,0 +1,26 @@
+@import '../../common/variables';
+@import '../../common/mixins';
+
+.map-container {
+  padding: $horizontal-border-offset 0 0;
+  @include inner-section-bottom-offset;
+
+  .map {
+    height: 550px;
+  }
+}
+
+
+[data-namespace = 'contacts'] { 
+  .map-container {
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      margin-left: -$mobil-col-width;
+      margin-right: -$mobil-col-width;
+    }
+  }
+  
+}
+
+
+

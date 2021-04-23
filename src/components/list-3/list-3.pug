@@ -1,0 +1,15 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin list-3
+    .list__container
+        +two-columns
+            +set('left')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>Без опорожнения</div> <div class="text_nowrap" data-text-part>емкости</div>', null)
+                    +info-block-6('<div class="text_nowrap" data-text-part>Надземные и подземные</div> <div class="text_nowrap" data-text-part>емкости любой</div> <div ' +
+                    'class="text_nowrap" data-text-part>геометрической формы</div>', null)
+            +set('right')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>Сбор данных в режиме</div> <div class="text_nowrap" data-text-part>реального времени</div>', null)
+                    +info-block-6('<div class="text_nowrap" data-text-part>Без изменения режима</div> <div class="text_nowrap" data-text-part>эксплуатации</div>', null)

@@ -1,0 +1,9 @@
+mixin input(label, type, required, textarea, attrs)
+    .input-group&attributes(attrs)(data-input-group="")
+        label.input-group__label(data-label="")= label
+        if (required)
+            input.input-group__input(type= type required="" data-input="")
+        else if (textarea)
+            textarea.input-group__input.input-group__message(data-input="" data-message="")
+        else
+            input.input-group__input(type= type data-input="")

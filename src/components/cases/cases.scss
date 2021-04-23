@@ -1,0 +1,34 @@
+@import '../../common/typography-mixins';
+@import '../power-lines/variables';
+@import '../case/case';
+@import '../../common/bootstrap';
+
+.cases {
+  &__title {
+    @include title-3;
+    padding-left: $power-line-offset;
+    transform: translateX(-4px);
+
+    @media only screen and (max-device-width: $breakpoint-x){
+      font-size: 42px;
+    }
+  }
+
+  &__items {
+    margin-top: 40px;
+  }
+
+  &__show-all {
+    margin-left: $fhd-col-width;
+  }
+
+  @media (max-width: $breakpoint-3 - 1) {
+    &__two-columns .two-columns__column {
+      @include make-col(12);
+    }
+
+    &__case {
+      margin-bottom: 40px;
+    }
+  }
+}

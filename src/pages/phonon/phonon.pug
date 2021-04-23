@@ -1,0 +1,105 @@
+include ../../components/preloader/preloader
+include ../../components/inner-first-screen/inner-first-screen
+include ../../components/info-block-1/info-block-1
+include ../../components/info-block-2/info-block-2
+include ../../components/info-block-3/info-block-3
+include ../../components/info-block-6/info-block-6
+include ../../components/info-block-5/info-block-5
+include ../../common/multiple-blocks
+include ../../components/two-columns/two-columns
+include ../../components/phonon-emission/phonon-emission
+include ../../components/phonon-equipment/phonon-equipment
+include ../../components/list-1/list-1
+include ../../components/list-2/list-2
+include ../../components/list-3/list-3
+include ../../components/list-4/list-4
+include ../../components/documents/documents
+include ../../components/adjacent-pages/adjacent-pages
+include ../../components/power-lines/power-lines
+include ../../components/scroll-down/scroll-down
+include ../../components/scroll-up/scroll-up
+include ../../common/multiple-blocks
+include ../../components/preloader/preloader
+
+doctype html
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../images/favicons/ru/icon-16.png')
+        link(rel='icon' type='image/png' sizes='48x48' href='../../images/favicons/ru/icon-48.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='../../images/favicons/ru/icon-96.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='../../images/favicons/ru/icon-192.png')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+    body
+        +sandwich-menu
+        #barba-wrapper
+            .barba-container(data-namespace='phonon')
+                +header
+                div#fullpage
+                    .section
+                        +inner-first-screen('Услуги', null, {class: 'info-block-4_position-top-left'}, '<div data-text-part>Метод фононной</div> <div ' +
+                        'data-text-part>диагностики</div>', 'Метод фононной диагностики основан на анализе физических процессов в материалах и конструкциях в ходе их протекания в реальном времени',
+                        '../../images/phonon/bg.jpg', {class: 'inner-first-screen_light'})
+                            +set('bottom')
+                                +scroll-down({class: 'inner-first-screen__scroll-down'}, true)
+                        +power-lines
+                    .section
+                        .tail
+                            +power-lines
+                            +phonon-emission
+                            +list-1
+                            +phonon-equipment
+                            .container-phonon
+                                +two-columns
+                                    +set('left')
+                                        div.anim-overflow
+                                            +info-block-1('<div class="thirdslide-infoblocks">Процесс фононной</div> <div class="thirdslide-infoblocks">диагностики</div> <div ' +
+                                            'class="thirdslide-infoblocks">трубопроводов</div>', 'Обследование  наземных, подземных и подводных трубопроводов, в том числе трубопроводов с ' +
+                                            'затрудненным доступом, без остановки транспортировки содержимого.', null, {}, {})
+                                    +set('right')
+                            +list-2
+                            .container-phonon
+                                +two-columns
+                                    +set('left')
+                                        +info-block-5('<div class="thirdslide-infoblocks">Планарный режим</div>', 'Диагностика участка длиной 200-500&nbsp;м',
+                                        {src: '../../images/phonon/3.jpg'},
+                                        {class: 'info-block-5_offset-top-2'})
+                                    +set('right')
+                                        +info-block-5('<div class="thirdslide-infoblocks">Линейный режим</div>', 'Диагностика участка длиной до&nbsp;1&nbsp;км',
+                                        {src: '../../images/phonon/4.png'},
+                                        {})
+                                +two-columns
+                                    +set('left')
+                                    +set('right')
+                                        +info-block-1('<div class="thirdslide-infoblocks">Процесс фононной</div> <div class="thirdslide-infoblocks">диагностики</div> <div ' +
+                                        'class="thirdslide-infoblocks">емкостных сооружений</div>', 'Диагностика емкостных сооружений любого типа, без изменения уровня налива.', null, {},
+                                        {class: 'info-block-1_phonon-top'})
+                            +list-3
+                            .container-phonon
+                                +two-columns
+                                    +set('left')
+                                        +info-block-5('<div class="thirdslide-infoblocks">Диагностика</div> <div class="thirdslide-infoblocks">резервуаров</div>', 'Обследование оболочки, ' +
+                                        'днища и крыши резервуара',
+                                        {src: '../../images/phonon/5.jpg'},
+                                        {})
+                                    +set('right')
+                                        +info-block-5('<div class="thirdslide-infoblocks">Диагностика</div> <div class="thirdslide-infoblocks">сосудов</div> <div ' +
+                                        'class="thirdslide-infoblocks">под давлением</div>', 'Обследование 100% ' +
+                                        'оболочки сосуда',
+                                        {src: '../../images/phonon/6.jpg'},
+                                        {class: 'info-block-5_offset-top-1'})
+                                +two-columns
+                                    +set('left')
+                                        +info-block-1('<div class="thirdslide-infoblocks">Этапы фононной</div> <div class="thirdslide-infoblocks">диагностики</div>', null, null, {},
+                                        {class: 'info-block-5_offset-top-2'})
+                                    +set('right')
+                            +list-4
+                            +documents
+                            +adjacent-pages(
+                            {bg: '../../images/adjacent/cases.jpg', name: 'кейсы', href: '/cases.html'},
+                            {bg: '../../images/adjacent/contacts.jpg', name: 'отзывы', href: '/reviews.html'}
+                            )
+                            +scroll-up({class: 'tail__scroll-up'})
+                +footer
+        +preloader

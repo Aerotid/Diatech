@@ -1,0 +1,53 @@
+@import '../../common/variables';
+@import '../../common/typography-mixins';
+
+.input-group {
+  margin: 40px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.input-group__input {
+  width: 100%;
+  padding: 5px 0;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 0;
+  @include font-16;
+  background: transparent;
+  box-shadow: none;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.input-group__input_invalid {
+  border-bottom: 1px solid red;
+}
+
+.input-group__label {
+  @include font-3;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  transform: translateY(0%);
+  z-index: -1;
+  transition: transform .4s;
+
+  &.transform {
+    transform: translateY(-250%) translateX(0);
+  }
+
+}
+
+.input-group__message {
+  resize: none;
+  height: calc(1.2em + 10px);
+  max-height: 271px;
+}
+
+

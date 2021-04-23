@@ -1,0 +1,43 @@
+@import '../../components/grid/grid';
+@import '../../components/full-screen/full-screen';
+
+
+.main-first-screen {
+  @include grid;
+
+  position: relative;
+  height: 100%;
+
+  &__inner-wrapper {
+    @include section-top-offset;
+    @include section-bottom-offset;
+  }
+
+  &__scroll-down {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    padding: 20px;
+    z-index: 2;
+  }
+  @media only screen and (max-device-width: $breakpoint-x) {
+    &__inner-wrapper {
+      padding-bottom: 0;
+      padding-top: 0;
+      justify-content: center;
+    }
+    &__scroll-down {
+      display: none;
+    }
+    &__left {
+      @include make-col(12);
+    }
+
+    &__middle,
+    &__right {
+      @include make-col(0);
+    }
+  }
+}

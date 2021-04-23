@@ -1,0 +1,57 @@
+@import '../../common/bootstrap';
+
+.two-columns {
+  @include make-container;
+
+  &_center {
+
+    .two-columns__row {
+      align-items: center;
+    }
+  }
+
+  &__row {
+    @include make-row;
+  }
+
+  &__column {
+    @include make-col(6);
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      @include make-col(12);
+    }
+  }
+
+  &_gap > .two-columns__row {
+
+    > .two-columns__column_left {
+      padding-right: $fhd-col-width/2;
+    }
+
+    > .two-columns__column_right {
+      padding-left: $fhd-col-width/2;
+    }
+  }
+
+  &_col-right-pl > .two-columns__row {
+
+    > .two-columns__column_right {
+      padding-left: $fhd-col-width;
+    }
+  }
+
+  &_col-right-pr > .two-columns__row{
+
+    > .two-columns__column_right {
+      padding-right: $fhd-col-width;
+    }
+  }
+
+  &_100 {
+    height: auto;
+
+    .two-columns__row {
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import '../../common/variables';
+@import '../../common/bootstrap';
+@import '../power-lines/variables';
+
+.geography {
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+  margin-top: 230px;
+
+  &__mobile {
+    margin-top: 0;
+  }
+
+  @media (max-width: $breakpoint-2 - 1) {
+    margin-top: 0;
+
+    &__mobile {
+      margin: 0;
+    }
+  }
+
+  &__bottom {
+    margin-top: 70px;
+
+    & .two-columns__column {
+      padding-right: $fhd-col-width;
+    }
+  }
+
+  @media (max-width: $breakpoint-3 - 1) {
+    &__bottom {
+      & .two-columns__column {
+        @include make-col(12);
+        padding-right: 0;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-2 - 1) {
+    &__bottom {
+      & .two-columns__column {
+        &_left {
+          order: 2;
+        }
+        &_right {
+          order: 1;
+        }
+      }
+    }
+  }
+}

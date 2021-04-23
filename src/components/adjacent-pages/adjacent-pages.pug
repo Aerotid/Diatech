@@ -1,0 +1,18 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin adjacent-pages(prev, next, attrs)
+    .adjacent-pages&attributes(attrs)
+        +two-columns
+            +set('left')
+                a.adjacent-pages__wrapper(href=prev.href, data-link-type='inner')
+                    img.adjacent-pages__bg(src=prev.bg)
+                    .adjacent-pages__content
+                        .adjacent-pages__name!= prev.name
+                        .adjacent-pages__text= prev.text
+            +set('right')
+                a.adjacent-pages__wrapper(href=next.href, data-link-type='inner')
+                    img.adjacent-pages__bg(src=next.bg)
+                    .adjacent-pages__content
+                        .adjacent-pages__name!= next.name
+                        .adjacent-pages__text= next.text

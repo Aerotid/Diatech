@@ -1,0 +1,23 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin case-top(title, text, subText, link, img, attrs)
+    .case-top&attributes(attrs)
+        .anim-overflow
+            +two-columns({class: 'two-columns_gap'})
+                +set('bg')
+                    img.case-top__bg(src= img, data-object-fit='cover', data-object-position='bottom center')
+                .container
+                    +set('left')
+                        if title
+                            .case-top__title
+                                != title
+                        if text
+                            .case-top__text!= text
+
+                    +set('right')
+                        if link && link.url && link.anchor
+                            a.case-top__link(href=link.url)= link.anchor
+
+
+

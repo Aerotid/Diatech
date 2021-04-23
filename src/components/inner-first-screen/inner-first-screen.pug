@@ -1,0 +1,21 @@
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../common/multiple-blocks
+include ../../components/info-block-4/info-block-4
+
+mixin inner-first-screen(info, link, position_info, title, text, bg_img, attrs)
+    block
+    .inner-first-screen&attributes(attrs)
+        if(bg_img)
+            img.inner-first-screen__background-img(src= bg_img)
+        .anim-overflow.anim-overflow_animation
+            -createBlock('top')
+            .inner-first-screen__wrapper-title
+                .anim-overflow_reviews
+                    if (info)
+                        +info-block-4(info, link, position_info)
+                    .inner-first-screen__title!= title
+            if(text)
+                .inner-first-screen__text!= text
+            -createBlock('bottom')
+    -clearBlocks('top', 'bottom')

@@ -1,0 +1,91 @@
+.fixed-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    overflow: hidden;
+    padding-left: 30px;
+    transform: translateY(-25%);
+
+    &__container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+
+        @media (max-width: 600px) and (orientation: portrait) {
+            flex-flow: row nowrap;
+            padding-left: $power-line-offset;
+            padding-right: $power-line-offset;
+        }
+
+        @media (max-width: $breakpoint-2-min) {
+            flex-flow: column nowrap;
+        }
+
+        @media (max-width: $breakpoint-1) {
+            padding-left: $power-line-offset-mobile;
+            padding-right: $power-line-offset-mobile;
+        }
+    }
+
+    &__button {
+        min-width: 180px;
+        white-space: nowrap;
+
+        @media (max-width: 600px) and (orientation: portrait) {
+            flex: 0 0 47.5%;
+            margin-right: 5%;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: $breakpoint-2-min) {
+            flex: 0 0 100%;
+            margin-right: 0;
+        }
+    }
+
+    @media (min-width: $breakpoint-4 + 1) and (min-height: 720px) {
+        display: none;
+    }
+
+    @media (max-width: $breakpoint-4 - 1) {
+        transform: translateY(-110%);
+    }
+
+    @media (max-width: $breakpoint-3) {
+        transform: translateY(-75%);
+
+        &__buttons {
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-width: $breakpoint-x) {
+        transform: none;
+        @include fixed-buttons-top-offset;
+    }
+
+    @media (max-width: $breakpoint-2) {
+        bottom: auto;
+        right: auto;
+        left: 55%;
+        transform: none;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    @media (max-width: 600px) and (orientation: portrait) {
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        transform: translateY(-150%);
+    }
+
+    @media (max-width: $breakpoint-2-min) {
+        transform: translateY(-75%);
+    }
+}

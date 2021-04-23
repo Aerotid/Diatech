@@ -1,0 +1,40 @@
+@import './variables';
+
+.power-lines {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  &__line {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: $power-lines-color;
+    top: 0;
+
+    &_left {
+      left: $power-line-offset;
+
+      @media screen and (max-width: $breakpoint-1-max) {
+        left: $power-line-offset-mobile;
+      }
+    }
+
+    &_middle {
+      left: 50%;
+    }
+
+    &_right {
+      right: $power-line-offset;
+      @media screen and (max-width: $breakpoint-1-max) {
+        right: $power-line-offset-mobile;
+      }
+    }
+  }
+}
+.main-slider .power-lines {
+  display: none;
+}

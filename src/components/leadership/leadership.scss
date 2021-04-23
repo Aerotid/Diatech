@@ -1,0 +1,31 @@
+@import '../power-lines/variables';
+
+$row-gap: 60px;
+
+.leadership {
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+  margin-top: 130px;
+  position: relative;
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: $breakpoint-1-max) {
+    margin-left: $power-line-offset-mobile;
+    margin-right: $power-line-offset-mobile;
+  }
+
+  &__row {
+    margin-top: $row-gap;
+
+    & .two-columns__column_right {
+      padding-top: 100px;
+
+      @media screen and (max-width: $breakpoint-2 - 1) {
+        padding-top: 50px;
+      }
+    }
+  }
+}

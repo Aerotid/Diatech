@@ -1,0 +1,5 @@
+@import 'typography-mixins';
+
+.title-1 {
+  @include title-1;
+}

@@ -1,0 +1,57 @@
+@import '~normalize.css';
+@import './fonts';
+@import './typography-classes';
+@import './links';
+@import '../components/header/header';
+@import '../components/footer/footer';
+@import '~bootstrap/scss/bootstrap-grid';
+@import '../components/power-lines/power-lines';
+@import '../components/container/container';
+@import '../components/two-columns/two-columns';
+@import '../components/radiance/radiance';
+@import '../components/preloader/preloader';
+@import '../components/fixed-buttons/fixed-buttons';
+@import '../pages/index/index';
+@import '../pages/company/company';
+@import '../pages/cases/cases';
+@import '../pages/directions/directions';
+@import '../pages/phonon/phonon';
+@import '../pages/reviews/reviews';
+@import '../pages/contacts/contacts';
+@import '../pages/404/404';
+html {
+  -ms-overflow-style: none;
+}
+body {
+  position: relative;
+}
+.anim-overflow {
+  z-index: 15;
+  overflow: hidden;
+  &_reviews {
+    z-index: 15;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-device-width: $breakpoint-x) {
+  .inner-first-screen_light .anim-overflow {
+    position: relative;
+  }
+}
+#awwwards {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s all;
+}
+.menu--show .awwwards #awwwards {
+  opacity: 0;
+  visibility: hidden;
+}
+.awwwards #awwwards {
+  opacity: 1;
+  visibility: visible;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

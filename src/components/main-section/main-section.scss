@@ -1,0 +1,5 @@
+@import './main-section-mixins.scss';
+
+.main-section {
+  @include main-section;
+}

@@ -1,0 +1,7 @@
+mixin button(text, href, attrs)
+    if (href)
+        a.btn(href=href)&attributes(attrs, attributes)= (text ? text: '')
+            block
+    else
+        button.btn&attributes(attrs, attributes)= (text ? text: '')
+            block

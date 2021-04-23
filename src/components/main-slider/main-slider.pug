@@ -1,0 +1,14 @@
+include ../info-block-3/info-block-3
+include ../fixed-buttons/fixed-buttons
+
+mixin main-slider(attrs)
+    .main-slider&attributes(attrs)
+        +info-block-3('<div>Метод Фононной</div><div>диагностики</div>', 'Технические возможности, отвечающие требованиям самых взыскательных клиентов', 'Диагностика без ' +
+        'остановки эксплуатации оборудования, без вмешательства в производственные процессы предприятия', {class:
+                'main-slider__info-block-3'},
+        {
+            url: '/phonon.html',
+            anchor: 'Подробнее о методе'
+        })
+        +fixed-buttons
+        block

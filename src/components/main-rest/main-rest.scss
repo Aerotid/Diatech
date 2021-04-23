@@ -1,0 +1,9 @@
+@import '../../common/mixins';
+
+.main-rest {
+  &__wrapper {
+    @include section-top-offset;
+    position: relative;
+  }
+
+}

@@ -1,0 +1,15 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin case(img, title, subTitle, text, attrs)
+    .case&attributes(attrs)
+        img.case__img(src=img, data-object-fit='cover')
+        .container
+
+        .case__left
+            .case__title!= title
+
+        .case__right
+            .anim-overflow
+                .case__sub-title!= subTitle
+                .case__text!= text

@@ -1,0 +1,24 @@
+@import '../../common/variables';
+@import '../../common/typography-mixins';
+@import '../power-lines/variables';
+
+.career {
+  margin-top: 160px;
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: $breakpoint-1-max) {
+    margin-left: $power-line-offset-mobile;
+    margin-right: $power-line-offset-mobile;
+  }
+
+  &__hh {
+    @include font-6;
+    color: $color-3;
+    text-decoration: underline;
+  }
+}

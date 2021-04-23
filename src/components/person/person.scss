@@ -1,0 +1,60 @@
+@import '../../common/variables';
+@import '../../common/typography-mixins';
+
+.person {
+  width: $fhd-col-width * 8;
+  opacity: 0;
+  visibility: hidden;
+  //transform: translateY(200px);
+
+  @media screen and (max-width: $breakpoint-4 - 1) {
+    width: 90%;
+    
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    width: auto;
+  }
+
+  &__stub {
+    width: $fhd-col-width * 7;
+    height: 500px;
+    background-color: $color-11;
+  }
+
+  &__wrapper {
+    margin-top: 45px;
+    padding-left: $fhd-col-width * 1.9;
+
+    @media screen and (max-width: $breakpoint-4 - 1) {
+      padding-left: $fhd-col-width * 1.9 / 2;
+      
+    }
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      padding-left: $mobil-col-width;
+    }
+  }
+
+  &__position {
+    @include font-11;
+  }
+
+  &__name {
+    @include font-4;
+    margin-top: 15px;
+  }
+
+  &__info {
+    @include font-5;
+    margin-top: 15px;
+    opacity: .8;
+  }
+
+  &__photo {
+
+    @media screen and (max-width: $breakpoint-4 - 1) {
+      max-width: 100%;
+    }
+  }
+}

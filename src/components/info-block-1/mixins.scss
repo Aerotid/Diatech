@@ -1,0 +1,12 @@
+@mixin bordered {
+  position: relative;
+
+  &-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: black;
+  }
+}

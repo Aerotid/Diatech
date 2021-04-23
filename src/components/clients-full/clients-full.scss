@@ -1,0 +1,112 @@
+@import '../info-block-1/mixins';
+@import '../info-block-1/variables';
+@import '../../common/typography-mixins';
+@import '../../common/variables';
+@import '../power-lines/variables';
+@import '../../common/mixins';
+
+.clients-full {
+  margin-top: 110px;
+  display: block;
+  position: relative;
+
+  &__title-wrapper {
+    @include bordered;
+    @include plant-on-power-line;
+    padding: $title-vertical-offset 60px;
+    display: flex;
+    align-items: baseline;
+
+    @media screen and (max-width: $breakpoint-4 - 1) {
+      flex-wrap: wrap;
+      margin-left: $power-line-offset;
+      padding-left: $mobil-col-width;
+      
+    }
+
+    @media screen and (max-width: $breakpoint-1-max) {
+      margin-left: $power-line-offset-mobile;
+    }
+  }
+
+  &__title {
+    @include title-1;
+  }
+
+  &__reviews {
+    margin-left: 65px;
+
+    @media screen and (max-width: $breakpoint-4 - 1) {
+      width: 100%;
+      margin-left: 0;
+      margin-top: $mobil-col-width;
+      
+    }
+
+    
+  }
+
+  &__logos {
+    padding: 20px #{smooth-value(20px, 40px, $breakpoint-4, $fhd-width, 'w')};
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $color-6;
+    height: 570px;
+    margin-left: $power-line-offset;
+    margin-right: $power-line-offset;
+    margin-top: 55px;
+
+    @media screen and (max-width: $breakpoint-3 - 1) {
+      margin-left: 0;
+      margin-right: 0;
+      height: auto;
+    }
+  }
+
+  &__logo-wrapper {
+    width: calc(100% / 5);
+    padding: 10px #{smooth-value(30px, 65px, $breakpoint-4, $fhd-width, 'w')};
+    height: calc(100% / 4);
+    display: flex;
+    align-items: center;
+    
+  }
+
+  &__logo {
+    object-fit: contain;
+    width: 100%;
+    height: 85px;
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      max-width: 150px;
+    }
+  }
+
+  @media (max-width: $breakpoint-4 - 1) {
+    padding: 20px #{smooth-value(20px, 40px, $breakpoint-3 , $breakpoint-4 - 1, 'w')};
+    height: auto;
+    &__logo-wrapper {
+      width: calc(100% / 4);
+      padding: 10px #{smooth-value(20px, 65px, $breakpoint-3 , $breakpoint-4 - 1, 'w')};
+      height: auto;
+    }
+  }
+
+  @media (max-width: $breakpoint-3 - 1) {
+    // padding: 20px #{smooth-value(20px, 40px, $breakpoint-2 , $breakpoint-3 - 1, 'w')};
+    &__logo-wrapper {
+      width: calc(100% / 3);
+      padding: 10px #{smooth-value(20px, 65px, $breakpoint-2, $breakpoint-3 - 1, 'w')};
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    margin-top: 55px;
+
+    &__logo-wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+  }
+}

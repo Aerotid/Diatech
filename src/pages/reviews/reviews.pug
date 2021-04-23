@@ -1,0 +1,50 @@
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/two-columns/two-columns
+include ../../components/inner-first-screen/inner-first-screen
+include ../../components/info-block-4/info-block-4
+include ../../common/multiple-blocks
+include ../../components/power-lines/power-lines
+include ../../components/preloader/preloader
+include ../../components/scroll-down/scroll-down
+include ../../components/reviews/reviews
+include ../../components/adjacent-pages/adjacent-pages
+include ../../components/scroll-up/scroll-up
+
+doctype html
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../images/favicons/ru/icon-16.png')
+        link(rel='icon' type='image/png' sizes='48x48' href='../../images/favicons/ru/icon-48.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='../../images/favicons/ru/icon-96.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='../../images/favicons/ru/icon-192.png')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+    body
+        +sandwich-menu
+        #barba-wrapper
+            .barba-container(data-namespace='reviews')
+                +header
+                #fullpage.reviews-page
+                    .section.section-reviews-first
+                        +power-lines
+                        .container-inner_cases_list
+                            .container-page
+                                +info-block-4('Отзывы', null, {class: 'info-block-4_color-9'})
+                        +inner-first-screen(null, null, {class: 'info-block-4_position-right-center'}, '<div data-text-part>Референс-листы</div>', null, null, {class:
+                                'inner-first-screen__cases_list ' +
+                                'inner-first-screen_no-bg inner-first-screen__cases-list inner-first-screen_reviews'})
+                            +set('bottom')
+                                +reviews({class: 'inner-first-screen__reviews'})
+                                +scroll-down({class: 'inner-first-screen__scroll-down'})
+                    .section.fp-auto-height.section-reviews-second
+                        +power-lines
+                        +adjacent-pages(
+                            {bg: '../../images/adjacent/contacts.jpg', name: 'услуги', href: '/directions.html'},
+                            {bg: '../../images/adjacent/cases.jpg', name: 'контакты', href: '/contacts.html'},
+                            {class: 'adjacent-pages_reviews-bottom'}
+                        )
+                        +scroll-up({class: 'tail__scroll-up'})
+                +footer
+        +preloader

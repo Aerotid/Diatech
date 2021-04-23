@@ -1,0 +1,8 @@
+@import '../../common/typography-mixins';
+
+.info-block-2 {
+  @include font-5;
+  font-size: 15px;
+  padding: 5px 30px 15px;
+  border-left: 1px solid black;
+}

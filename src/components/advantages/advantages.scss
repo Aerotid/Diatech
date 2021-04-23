@@ -1,0 +1,148 @@
+@import '../grid/grid';
+@import '../../common/variables';
+@import '../../common/bootstrap';
+@import '../../common/mixins';
+
+.advantages {
+  @include grid;
+  padding-top: smooth-value(40px, 165px, $breakpoint-1, $fhd-width, 'w');
+
+  &__inner-wrapper {
+    height: auto;
+    @media screen and (max-width: $breakpoint-1-max) {
+      margin-left: $power-line-offset-mobile;
+      margin-right: $power-line-offset-mobile;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    padding-top:60px; 
+  }
+
+  &__title {
+    @include plant-on-power-line;
+  }
+
+  &__advantage {
+    width: 100%;
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      flex-direction: column;
+    }
+
+    & .advantage__text {
+      //flex: 1 1 auto;
+      width: 65%;
+      margin-left: auto;
+
+      @media (max-width: $breakpoint-4 - 1) {
+        width: 85%;
+      }
+
+      @media (max-width: $breakpoint-2 - 1) {
+        margin-left: 25px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__row_middle {
+    align-items: flex-start;
+    margin-top: 120px;
+  }
+
+  &__row_middle,
+  &__row_bottom {
+    & .advantages__left {
+      padding-left: $fhd-col-width;
+      padding-right: smooth-value($fhd-col-width, 200px, $breakpoint-4, $fhd-width, 'w');
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 120px;
+
+    @media (max-width: $breakpoint-4 - 1) {
+      margin-bottom: 0;
+      order: -1;
+    }
+
+    &_last {
+      margin-bottom: 0;
+    }
+  }
+
+  &__middle {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding-left: $fhd-col-width;
+  }
+
+  &__right {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0 $fhd-col-width;
+  }
+
+  @media (max-width: $breakpoint-4 - 1) {
+    &__row_middle,
+    &__row_bottom {
+      & .advantages__left {
+        padding-right: $fhd-col-width;
+      }
+      .advantages__left,
+      .advantages__middle,
+      .advantages__right {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .advantages__middle {
+        padding-right: 15px;
+      }
+    }
+
+    &__left {
+      @include make-col(12);
+      padding-bottom: 40px;
+    }
+
+    &__middle {
+      @include make-col(6);
+    }
+
+    &__right {
+      @include make-col(6);
+    }
+  }
+
+  @media (max-width: $breakpoint-2 - 1) {
+    &__row_top {
+      padding-bottom: 40px;
+    }
+    &__row_middle {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &__middle {
+      @include make-col(12);
+
+      noindex {
+        display: none;
+      }
+    }
+    &__right {
+      @include make-col(12);
+
+      noindex {
+        display: none;
+      }
+    }
+  }
+}

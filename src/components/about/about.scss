@@ -1,0 +1,93 @@
+@import '../power-lines/variables';
+@import '../../common/bootstrap';
+@import '../../common/typography-mixins';
+@import '../../common/mixins';
+
+.about {
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+
+  @media screen and (max-width: $breakpoint-1-max) {
+    margin-left: $power-line-offset-mobile;
+    margin-right: $power-line-offset-mobile;
+  }
+
+  &__wrapper {
+    padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+    padding-top: 35px;
+
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      padding-left: $mobil-col-width;
+    }
+
+    
+  }
+
+  & .two-columns {
+    margin-top: 30px;
+  }
+
+  &__grid {
+    @include make-container;
+
+
+    &_right {
+      padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+      
+    }
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      padding-left: 0;
+    }
+  }
+
+  &__row {
+    @include make-row;
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__col {
+    &_1,
+    &_2 {
+      @include make-col(6);
+      @include font-1;
+      color: $color-9;
+      padding-right: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+
+      @media screen and (max-width: $breakpoint-2 - 1) {
+        margin-bottom: $mobil-col-width;
+      }
+
+      @media screen and (max-width: $breakpoint-3 - 1) {
+        @include make-col(12);
+        padding-right: 0;
+        font-size: 14px;
+        margin-bottom: $mobil-col-width;
+      }
+    }
+
+    &_3 {
+      @include make-col(3);
+      @include title-8;
+
+      @media screen and (max-width: $breakpoint-3 - 1) {
+        @include make-col(12);
+      }
+    }
+
+    &_4 {
+      @include make-col(9);
+      @include font-4;
+      padding-right: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+
+      @media screen and (max-width: $breakpoint-3 - 1) {
+        @include make-col(12);
+        padding-right: 0;
+      }
+    }
+  }
+}

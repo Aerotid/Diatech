@@ -1,0 +1,48 @@
+@import '../../common/variables';
+@import '../../common/typography-mixins';
+
+.lang-selector {
+  display: flex;
+
+  @media (max-width: $breakpoint-2 - 1) {
+    //display: none;
+  }
+
+  &__lang {
+    @include font-2;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    &:hover,
+    &_active {
+      @include font-1;
+      font-size: 14px;
+    }
+  }
+
+  .contrast_header & {
+    &__lang {
+      color: rgba(255, 255, 255, .5);
+
+      &:hover,
+      &_active {
+        color: white;
+      }
+    }
+  }
+
+  .menu--show & {
+    &__lang {
+      color: rgba(black, .5);
+
+      &:hover,
+      &_active {
+        color: black;
+      }
+    }
+  }
+}

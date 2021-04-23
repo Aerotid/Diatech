@@ -1,0 +1,23 @@
+include ../two-columns/two-columns
+include ../info-block-1/info-block-1
+include ../../common/multiple-blocks
+
+mixin activity-directions
+    .activity-directions
+        +two-columns
+            +set('left')
+                +info-block-1('<div data-text-part>Метод фононной</div>  <div data-text-part>диагностики</div>', null, 'Метод фононной диагностики позволяет осуществлять обследование объектов в&nbsp;условиях реальной эксплуатации, без вмешательства в&nbsp;производственный процесс и&nbsp;остановок, без изменения режимов, на&nbsp;любой стадии изготовления, испытания, эксплуатации или ремонта.', {
+                    url: '/phonon.html',
+                    anchor: 'подробнее о методе'
+                }, {class: 'activity-directions__info-block'})
+                .activity-directions__title.activity-directions__title_offset#anim Направления
+                .activity-directions__title деятельности
+            +set('right')
+                +info-block-1('<div data-text-part>Традиционные</div> <div data-text-part>методы</div> <div ' +
+                'data-text-part>неразрушающего</div> <div data-text-part>контроля</div>', null, '<div>Метод акустической эмиссии</div> ' +
+                '<div>Ультразвуковой контроль</div> <div>Радиоволновой контроль</div> <div>Магнитный контроль</div> <div>Визуально измерительный метод</div> <div>Контроль ' +
+                'проникающими веществами</div> <div>Рентгеновский метод НК</div> <div>Тепловизионный контроль</div> <div>Металлографический контроль</div> <div>Электрический' +
+                ' контроль</div> <div>Электромагнитный контроль</div> <div>Твердометрия</div> <div>Геоинформационные технологии</div> <div>Вибродиагностика</div>', {
+                    url: '#',
+                    anchor: ''
+                }, {class: 'activity-directions__info-block activity-directions__info-block_right'})

@@ -1,0 +1,41 @@
+@import '../../common/variables';
+@import '../../common/typography-mixins';
+
+.objects-map-preview {
+  padding-left: $fhd-col-width;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 400px;
+
+  @media (max-width: $breakpoint-4 - 1) {
+    height: 615px;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__title {
+    @include title-4;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    color: $color-3;
+  }
+
+  @media (max-width: $breakpoint-3 - 1) {
+    margin-top: 40px;
+    height: 400px;
+  }
+  @media (max-width: $breakpoint-2 - 1) {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,21 @@
+include ../input/input
+include ../button/button
+include ../../components/two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin form(attrs)
+    .form&attributes(attrs)
+        form
+            +input('Контактное лицо', 'text', 'required')
+
+            +two-columns({class: 'two-columns_gap'})
+                +set('left')
+                    +input('Телефон', 'text', null, null, {'data-phone': ''})
+
+                +set('right')
+                    +input('Email', 'email', 'required', null, {'data-email': ''})
+
+            +input('Комментарий', 'text', null, 'textarea', {'data-message': ''})
+
+            +button('отправить', '', {class: 'btn_type-1'})
+

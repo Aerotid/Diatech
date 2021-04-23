@@ -1,0 +1,90 @@
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/case-top/case-top
+include ../../components/info-block-1/info-block-1
+include ../../components/inner-first-screen/inner-first-screen
+include ../../components/img-block/img-block
+include ../../components/two-columns/two-columns
+include ../../common/multiple-blocks
+include ../../components/power-lines/power-lines
+include ../../components/preloader/preloader
+include ../../components/adjacent-pages/adjacent-pages
+include ../../components/scroll-up/scroll-up
+
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../images/favicons/ru/icon-16.png')
+        link(rel='icon' type='image/png' sizes='48x48' href='../../images/favicons/ru/icon-48.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='../../images/favicons/ru/icon-96.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='../../images/favicons/ru/icon-192.png')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+    body
+        +sandwich-menu
+        #barba-wrapper
+            .barba-container(data-namespace='case')
+                +header({class: 'contrast_header'})
+                +power-lines({class: 'contrast_header'})
+
+                .section.contrast
+                    +inner-first-screen('Вернуться к кейсам', '/cases.html#case_petronas', {class: 'info-block-4_position-right-center'}, '<span data-title-item-anim>Диагностика</span> <br><span data-title-item-anim>двустенного</span><br><span data-title-item-anim>резервуара</span>', '<span data-title-item-anim>Petronas, Малайзия</span>', '../../images/cases/case_petronas_main_img.jpg', {class: 'inner-first-screen_height-100vh'})
+                    +power-lines
+
+                .container-inner
+                    .container-page
+                        .container_case-inner
+                            +two-columns
+                                +set('left')
+                                    +info-block-1('<div data-text-part>проведение </div><div data-text-part>технической </div><div data-text-part>диагностики </div>', '', null, {})
+
+                            +two-columns
+                                +set('left')
+                                    +info-block-1('', 'Диагностика двустенного резервуара&nbsp;&mdash; один из&nbsp;проектов для крупной мировой нефтегазовой компании Petronas, реализован на&nbsp;нефтеперерабатывающем заводе в&nbsp;малайском штате Тренгану.', null, null, {class: 'info-block-1_no-max-width'})
+
+
+                            +img-block('../../images/cases/case_petronas_descr_img.jpg', {class: 'img-block_no-height'})
+
+                        .container_case-inner
+                            +two-columns
+                                +set('left')
+                                    +info-block-1('<div data-text-part>Требования</div>', '', null, {})
+
+                            +two-columns
+                                +set('left')
+                                    +info-block-1(null, null, '<p>Обследование 100% поверхности резервуара, включая две оболочки</p> <p>Диагностика 100% поверхности днища резервуара</p>', null)
+
+                                +set('right')
+                                    +info-block-1(null, null, '<p>Диагностика без опорожнения резервуара</p> <p>Диагностика без изменения рабочего режима эксплуатации</p>', null)
+
+                        .container_case-inner
+                            +two-columns
+                                +set('right')
+                                    +info-block-1('<div data-text-part>Реализация</div>', '', null, {})
+
+                            +two-columns
+                                +set('left')
+                                    +info-block-1(null, null, '<p>Срок реализации проекта, включая подготовку отчета составил 7&nbsp;дней, рабочая группа включала 3&nbsp;специалиста</p>' +
+                                    '<p>Обследование внутренней, внешней оболочки и&nbsp;днища резервуара было проведено одновременно</p>' +
+                                    '<p>Потребовалась минимальная подготовка для начала обследования, что позволило избежать расходы на очистку резервуара</p>' +
+                                    '<p>Диагностика без изменения рабочего и температурного режима</p>', null, {class: 'info-block-1_no-max-width'})
+
+                                +set('right')
+                                    +info-block-1(null, null, '<p>Обследование 100% поверхности резервуара, включая две стенки, две кровли и днище</p> <p>Выявлено 56&nbsp;дефектов различной степени опасности</p>', null, {class: 'info-block-1_no-max-width'})
+                    +adjacent-pages(
+                    {
+                        bg: '../../images/cases/case_total_main_img.jpg',
+                        name: 'Total E&P, <br>Ангола',
+                        href: '/case_total.html',
+                        text: 'Предыдущий кейс'
+                    },
+                    {
+                        bg: '../../images/cases/case_gazprom_main_img.jpg',
+                        name: 'Газпром, <br>Россия',
+                        href: '/case_gazprom.html',
+                        text: 'Следующий кейс'
+                    }
+                    )
+                    +scroll-up
+                +footer
+        +preloader

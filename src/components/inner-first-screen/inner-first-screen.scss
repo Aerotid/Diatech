@@ -1,0 +1,413 @@
+@import '../../common/variables';
+@import '../power-lines/variables';
+@import '../../common/mixins';
+@import '../../common/typography-mixins';
+
+.inner-first-screen {
+  @include inner-section-top-offset;
+  padding-left: $power-line-offset;
+  padding-right: $power-line-offset;
+  background-color: $color-7;
+  height: 100%;
+  padding-bottom: 80px;
+  position: relative;
+  transition: padding 0.6s;
+  will-change: padding;
+
+  &_light {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      display: none;
+      background-color: rgba(255,255,255,.5);
+
+      @media (max-width: $breakpoint-x) {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-1-max) {
+    padding-left: $power-line-offset-mobile;
+    padding-right: $power-line-offset-mobile;
+  }
+
+  @media screen and (max-width: $breakpoint-x) {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .info-block-4{
+      display: none;
+      padding-top: 0;
+      padding-left: 0;
+      &__title {
+        display: none;
+      }
+    }
+    &__cases-list {
+
+      & .inner-first-screen__title {
+        margin-top: 30px;
+      }
+
+    }
+    &_reviews {
+      display: block;
+    }
+  }
+
+  &__cases-list {
+
+    @include inner-section-top-offset-cases;
+    padding-bottom: 0;
+
+    @media screen and (max-width: $breakpoint-x) {
+      padding-top: 0;
+
+      &.inner-first-screen {
+        @include inner-section-top-offset;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-2 - 1) and (max-height: 520px) {
+      padding-top: 0;
+
+      &.inner-first-screen {
+        @include inner-section-top-offset;
+      }
+    }
+    
+  }
+
+  &__scroll-down,
+  &__scroll-up {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    padding: 20px;
+    z-index: 2;
+  }
+
+  &__scroll-down {
+    @media screen and (max-width: $breakpoint-x) {
+      display: none;
+    }
+  }
+
+  &__scroll-down_mobil-hide {
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      visibility: hidden;
+    }
+  }
+
+  &__section {
+    @include font-14;
+    @include plant-on-power-line;
+    color: white;
+    border-left: 3px solid white;
+    padding: 10px 0 10px 30px;
+    position: relative;
+  }
+
+  &__background-img {
+    position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 0;
+    // bottom: 0;
+    object-fit: cover;
+    // object-position: bottom right;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__wrapper-title {
+    position: relative;
+  }
+
+  &__title {
+    @include title-7;
+    color: $color-5;
+    transform: translateX(0px);
+
+    @media screen and (max-width: $breakpoint-3 - 1) {
+      margin-top: 0px;
+    }
+    @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+      font-size: 30px;
+    }
+
+    & a {
+      @include title-7;
+      color: $color-5;
+    }
+  }
+
+  &__text {
+    @include font-4;
+    margin-top: 30px;
+    padding-left: $fhd-col-width;
+    color: $color-5;
+    max-width: $fhd-col-width * 8;
+    position: relative;
+    min-height: 150px;
+
+    @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+      min-height: auto;
+      padding-left: 20px;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: $breakpoint-1-max) {
+      padding-left: $mobil-col-width;
+    }
+  }
+
+  &_height-auto {
+    height: auto;
+  }
+
+  &_height-100vh {
+    height: 100vh;
+  }
+
+  &_transparent-bg {
+    background: transparent;
+  }
+  .contrast & {
+    &__title,
+    &__text {
+      color: white;
+    }
+  }
+
+  &_no-bg {
+    background-color: transparent;
+  }
+
+  &__reviews {
+    margin-top: 12vh;
+
+    @media screen and (max-width: $breakpoint-2) {
+      margin-top: 0;
+    }
+  }
+  &_reviews {
+    .anim-overflow {
+      z-index: 1;
+      overflow: visible;
+    }
+  }
+
+  &__company-selector-item {
+    height: 70px;
+  }
+}
+
+[data-title-item-anim] {
+  display: inline-block;
+}
+
+[data-namespace="cases"] {
+  overflow: hidden;
+}
+
+[data-namespace="case"] {
+  .container-inner {
+    position: relative;
+    background-color: #fff;
+    margin-top: -25vh;
+    z-index: 1;
+    will-change: margin;
+  }
+}
+
+
+
+[data-namespace="case"],
+[data-namespace="cases"] {
+  @media screen and (max-width: $breakpoint-3 - 1) {
+    
+    .inner-first-screen {
+      &__title {
+        margin-top: 0;
+        margin-bottom: 60px;
+      }
+
+      &__text {
+        padding-top: 0;
+
+        @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+          padding-top: 0;
+        }
+      }
+
+      .info-block-4 {
+        display: block;
+        // transform: translate(0);
+        // left: auto;
+        // top: auto;
+        // bottom: 0;
+        // right: 0;
+        // margin-bottom: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        &__title {
+          display: block;
+        }
+      }
+
+      .slider-navigation__counter {
+        font-size: 20px;
+      }
+      .slider-navigation_cases-slider {
+        bottom: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-1) and (orientation: landscape) {
+    .inner-first-screen {
+      &__title {
+        margin-bottom: 40px;
+        margin-top: 10px;
+      }
+
+      &__text {
+        padding-top: 30px;
+      }
+
+      .info-block-4 {
+        bottom: auto;
+        margin-top: 0;
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-bottom: 0;
+      }
+    }
+
+    .slider-navigation__counter {
+      font-size: 14px;
+    }
+    .slider-navigation_cases-slider {
+      bottom: 20px;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    .inner-first-screen {
+      .info-block-4 {
+        transform: translate(0);
+        left: auto;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 0;
+
+      }
+
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) and (max-height: 480px) and (orientation: landscape){
+    
+
+    .inner-first-screen {
+      &__title {
+        font-size: 40px;
+        margin-top: 10px;
+        margin-bottom: 60px;
+      }
+
+      &__text {
+        margin-top: -60px;
+        font-size: 14px;
+        padding-top: 0;
+      }
+
+      .info-block-4 {
+        bottom: auto;
+        margin-top: 0;
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-bottom: 0;
+      }
+    }
+
+    .slider-navigation__counter {
+      font-size: 14px;
+    }
+    .slider-navigation_cases-slider {
+      bottom: 20px;
+    }
+  }
+
+
+
+  
+
+}
+
+
+
+
+
+
+
+[data-namespace = 'contacts'] { 
+  @media screen and (max-width: $breakpoint-2 - 1) {
+
+    .inner-first-screen__title a {
+      font-size: 40px;
+    }
+
+  }
+
+  @media screen and (max-width: $breakpoint-x) {
+
+    .two-columns_col-right-pr > .two-columns__row > .two-columns__column_right {
+      padding-right: $mobil-col-width;
+      padding-left: 0;
+    }
+
+    .two-columns_gap > .two-columns__row > .two-columns__column_right {
+      padding-left: 0;
+    }
+    
+    .form {
+      padding-left: $mobil-col-width;
+
+      .input-group {
+        margin: 25px 0;
+
+        &__input {
+          line-height: 1.5;
+        }
+      }
+
+      .btn {
+        margin-top: 50px;
+      }
+    }
+  }
+}

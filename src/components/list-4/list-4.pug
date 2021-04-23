@@ -1,0 +1,29 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin list-4
+    .list__container
+        +two-columns
+            +set('left')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>1. Мобилизация группы</div>', '<li class="info-block-6__item">Мобилизация фононных специалистов и ' +
+                    'фононного оборудования</li>')
+                    +info-block-6('<div class="text_nowrap" data-text-part>2. Предварительная диагностика</div>', '<li class="info-block-6__item">Получение информации об объекте' +
+                    ' для составления модели объекта, подбора конфигурации, настройки и калибровки оборудования</li>')
+            +set('right')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>3. Фононный мониторинг</div>', '<li class="info-block-6__item">Сбор данных в режиме реального времени ' +
+                    'с использованием фононного оборудования</li>')
+                    +info-block-6('<div class="text_nowrap" data-text-part>4. Постфононная обработка</div>', '<li class="info-block-6__item">Обработка и анализ полученных ' +
+                    'данных, составление отчета о выявленных дефектах</li>')
+        +two-columns
+            +set('left')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>5. Крепление датчиков</div>', '<li class="info-block-6__item">На&nbsp;зачищенную до&nbsp;металла ' +
+                    'поверхность объекта</li>')
+                    +info-block-6('<div class="text_nowrap" data-text-part>6. Калибровка</div>', '<li class="info-block-6__item">Натурная калибровка и пробный мониторинг</li>')
+            +set('right')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>7. Мониторинг</div>', '<li class="info-block-6__item">Сбор данных происходит в&nbsp;режиме реального ' +
+                    'времени</li>')
+                    +info-block-6('<div class="text_nowrap" data-text-part>8. Постобработка</div>', '<li class="info-block-6__item">Анализ данных, составление отчета</li>')

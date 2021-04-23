@@ -1,0 +1,65 @@
+@import '../../common/typography-mixins';
+
+.info-block-4 {
+  padding-left: $fhd-col-width;
+  // padding-top: 50px;
+  margin-bottom: smooth-value(25px, 100px, $breakpoint-2, $fhd-height, 'h');
+
+  @media screen and (max-width: $breakpoint-1-max) {
+    padding-left: 0;
+  }
+
+  @media screen and (max-height: $breakpoint-2) {
+    margin-bottom: 30px;
+  }
+
+
+  &__title {
+    position: relative;
+    @include font-14;
+    color: $color-5;
+    //border-left: 3px solid;
+    padding: 10px 0 10px 30px;
+    display: block;
+
+
+    &-border {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background-color: black;
+    }
+  }
+
+  .contrast & {
+    &__title {
+      color: white;
+
+      &-border {
+        background-color: white;
+      }
+    }
+  }
+
+  &_position-right-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    transform: translate(0, -50%);
+    padding-top: 0;
+  }
+
+  &_color-9 {
+    .info-block-4__title {
+      color: $color-9;
+    }
+    .info-block-4__title-border {
+      background-color: $color-9;
+    }
+  }
+
+
+}

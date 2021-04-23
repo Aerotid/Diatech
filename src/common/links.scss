@@ -1,0 +1,8 @@
+@import './typography-mixins';
+
+a {
+  @include font-9;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}

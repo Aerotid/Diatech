@@ -1,0 +1,30 @@
+@import '../../common/typography-mixins';
+@import '../../common/variables';
+@import '../../common/functions';
+
+.advantage {
+  display: flex;
+  align-items: center;
+
+  &__number {
+    @include font-10;
+    height: smooth-value(40px, 80px, $breakpoint-1, $fhd-width, 'w');
+    flex: 0 0 auto;
+    //margin-right: 30px;
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      align-self: flex-start;
+      margin-left: $mobil-col-width;
+      margin-bottom: $mobil-col-width;
+    }
+  }
+
+  &__text {
+    @include font-4;
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      align-self: flex-start;
+      margin-left: $mobil-col-width;
+    }
+  }
+}

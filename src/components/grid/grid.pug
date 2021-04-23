@@ -1,0 +1,32 @@
+include ../../common/multiple-blocks
+include ../power-lines/power-lines
+
+mixin grid(blockName, attrs)
+    block
+    div(class=blockName)&attributes(attrs)
+        -createBlock('bg')
+        +power-lines
+        div(class=`${blockName}__inner-wrapper`)
+            div(class=`${blockName}__row ${blockName}__row_top`)
+                div(class=`${blockName}__left`)
+                    -createBlock('left-top')
+                div(class=`${blockName}__middle`)
+                    -createBlock('middle-top')
+                div(class=`${blockName}__right`)
+                    -createBlock('right-top')
+            div(class=`${blockName}__row ${blockName}__row_middle`)
+                div(class=`${blockName}__left`)
+                    -createBlock('left-middle')
+                div(class=`${blockName}__middle`)
+                    -createBlock('middle-middle')
+                div(class=`${blockName}__right`)
+                    -createBlock('right-middle')
+            div(class=`${blockName}__row ${blockName}__row_bottom`)
+                div(class=`${blockName}__left`)
+                    -createBlock('left-bottom')
+                div(class=`${blockName}__middle`)
+                    -createBlock('middle-bottom')
+                div(class=`${blockName}__right`)
+                    -createBlock ('right-bottom')
+        -createBlock('additionals')
+    -clearBlocks(['bg', 'left-top', 'middle-top', 'right-top', 'left-middle', 'middle-middle','right-middle', 'left-bottom', 'middle-bottom', 'right-bottom', 'additionals'])

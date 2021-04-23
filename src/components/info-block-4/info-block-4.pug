@@ -1,0 +1,12 @@
+mixin info-block-4(title, href, attrs)
+
+    .info-block-4&attributes(attrs)
+        .anim-overflow
+            if (href)
+                a.info-block-4__title(href= href, data-link-type= 'case')
+                    .info-block-4__title-border
+                    != title
+            else
+                .info-block-4__title
+                    .info-block-4__title-border
+                    != title

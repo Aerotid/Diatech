@@ -1,0 +1,14 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin list-2
+    .list__container
+        +two-columns
+            +set('left')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>Без изменения режима</div> <div class="text_nowrap" data-text-part>эксплуатации</div>', null)
+                    +info-block-6('<div class="text_nowrap" data-text-part>Сбор данных в режиме</div> <div class="text_nowrap" data-text-part>реального времени</div>', null)
+            +set('right')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>100% длины, объема </div> <div class="text_nowrap" data-text-part>и площади ' +
+                    'поверхности</div> <div class="text_nowrap" data-text-part>объекта</div>', null)

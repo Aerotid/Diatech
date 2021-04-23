@@ -1,0 +1,16 @@
+include ../../components/two-columns/two-columns
+include ../../components/map-info/map-info
+include ../../common/multiple-blocks
+
+mixin projects-map(attrs)
+    .projects-map&attributes(attrs)
+        +two-columns
+            +set('left')
+                .projects-map__title
+                    div Карта
+                    div Проектов
+        //img.projects-map__map(src='../../images/projects-map.jpg')
+        .projects-map__map-container(data-pin='../../images/project-map/pin2.png').js-map
+            .map(data-selected-country='RU')
+        .container-page
+            +map-info({class: 'projects-map__map-info'})

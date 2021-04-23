@@ -1,0 +1,107 @@
+@import '../../common/typography-mixins';
+@import '../../common/mixins';
+@import './variables';
+@import './mixins';
+
+.info-block-1 {
+  @include plant-on-power-line;
+
+  //a {
+  //  color: inherit;
+  //  font-size: inherit;
+  //}
+
+  &__title {
+    @include title-1;
+    @include bordered;
+    padding: $title-vertical-offset smooth-value(25px, 60px, $breakpoint-1, $fhd-width, 'w');
+
+    @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+      padding: 10px 20px;
+      font-size: 30px;
+    }
+  }
+
+  &__content {
+    margin-top: 40px;
+  }
+
+  &__text {
+    @include font-4;
+    box-sizing: content-box;
+    max-width: 450px;
+    margin-top: 40px;
+    padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+
+    @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+      margin-top: 5px;
+      padding-left: 20px;
+      font-size: 12px;
+    }
+
+    p {
+      margin: 2em 0;
+    }
+  }
+
+  &__sub-text {
+    @include font-6;
+    max-width: 450px;
+    margin-top: smooth-value(10px, 40px, $breakpoint-1, $fhd-width, 'w');
+    padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+    box-sizing: content-box;
+
+    @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+      margin-top: 10px;
+      padding-left: 20px;
+      font-size: 12px;
+    }
+
+    p {
+      margin: 2em 0;
+    }
+
+    &_eng {
+      div {
+        font-size: 14px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  &__link {
+    margin-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+    display: inline-block;
+    margin-top: $link-offset;
+  }
+
+  &_no-max-width {
+    .info-block-1__sub-text,
+    .info-block-1__text {
+      max-width: none;
+      padding-right: $fhd-col-width;
+
+
+      @media (max-width: $breakpoint-2 - 1) {
+        padding-right: 0;
+      }
+    }
+  }
+  &_phonon-top {
+    margin-top: 170px;
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      margin-top: 50px;
+    }
+  }
+
+  &_contacts {
+    .info-block-1__sub-text {
+      margin-top: 40px;
+
+      @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+        margin-top: 10px;
+      }
+    }
+  }
+}

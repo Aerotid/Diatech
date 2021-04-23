@@ -1,0 +1,199 @@
+@import "../../common/typography-mixins";
+@import '../../common/variables';
+@import '../../components/power-lines/variables';
+
+.sandwich-menu {
+  //position: absolute;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  min-width: $breakpoint-1;
+  height: auto;
+  //height: 100vh;
+  background-color: #fff;
+  color: $color-5;
+  opacity: 0;
+  visibility: hidden;
+
+  &_offset-top {
+    top: 105px;
+    bottom: 72px;
+
+    @media (max-width: $breakpoint-2 - 1) {
+      bottom: 0;
+    }
+
+    & .sandwich-menu__inner-wrapper {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__inner-wrapper {
+    position: relative;
+    display: flex;
+    width: auto;
+    //height: auto;
+    height: 100%;
+    padding-top: 105px;
+    padding-bottom: 100px;
+    margin-left: $power-line-offset;
+    margin-right: $power-line-offset;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    //justify-content: flex-start;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+
+    &--submenu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding-left: 25px;
+      border-left: 3px solid black;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+
+    &--submenu {
+      display: inline-block;
+      width: auto;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__link, &__link:active, &__link:visited {
+    min-width: smooth-value(380px, 640px, $breakpoint-2, $fhd-width, 'w');
+    @include font-13;
+    transition: color .5s ease-out;
+    
+    @media (min-width: $breakpoint-5) and (max-height: 950px) {
+      @include font-21;
+    }
+  }
+
+  &__link--submenu, &__link--submenu:active, &__link--submenu:visited {
+    min-width: auto;
+    @include font-4;
+  }
+
+  &__item:hover &__link {
+    color: $color-3;
+
+    &--submenu {
+      color: $color-5;
+
+      &:hover {
+        color: $color-3;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-3 - 1) {
+  .sandwich-menu {
+
+    &__inner-wrapper {
+      flex-wrap: wrap;
+      margin: 0;
+      padding-left: $power-line-offset-mobile;
+      width: 100%;
+    }
+
+    &__item {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      display: block;
+      padding: 0;
+      margin-bottom: smooth-value(5px, 35px, 320px, $breakpoint-height-1, 'h');
+
+      &:last-child {
+        //margin: 0;
+        //padding-bottom: 100px;
+      }
+
+      &--submenu {
+        padding: 0;
+        margin: 10px 0;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+    &__list {
+      justify-content: center;
+      padding-right: 17px;
+      height: 100%;
+      width: 100%;
+      overflow-x: visible;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      &--submenu {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px 0 5px $mobil-col-width;
+        margin-top: smooth-value(5px, 30px, 320px, $breakpoint-height-1, 'h');
+        height: auto;
+        overflow-y: visible;
+      }
+    }
+
+    &__link, &__link:active, &__link:visited {
+      min-width: auto;
+    }
+
+    &__link--submenu, &__link--submenu:active, &__link--submenu:visited {
+      font-size: smooth-value(14px, 20px, $breakpoint-1, $fhd-width, 'w');
+    }
+  }
+}
+@media (max-width: $breakpoint-x) {
+  .sandwich-menu {
+
+    &__inner-wrapper {
+      padding-top: 65px;
+      padding-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-x) and (orientation: landscape) {
+  .sandwich-menu {
+
+    &__list {
+      justify-content: flex-start;
+    }
+    &__inner-wrapper {
+      padding-left: $power-line-offset;
+    }
+  }
+}

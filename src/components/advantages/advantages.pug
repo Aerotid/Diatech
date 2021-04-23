@@ -1,0 +1,36 @@
+include ../../common/multiple-blocks
+include ../info-block-1/info-block-1
+include ../advantage/advantage
+include ../sub-advantage/sub-advantage
+include ../grid/grid
+
+mixin advantages(title, text, attrs, link)
+    .advantages.advantages__inner-wrapper
+        .advantages__row.advantages__row_top
+            +info-block-1(title, text, null, link, {class: 'advantages__title'})
+        .advantages__row.advantages__row_middle
+                .advantages__left
+                    .advantage.advantages__advantage
+                        .advantage__number 22
+                        .advantage__text Более 20&nbsp;лет опыта работы в&nbsp;России и&nbsp;за&nbsp;рубежом
+                .advantages__middle
+                    .sub-advantage
+                        .sub-advantage__number 1
+                        .sub-advantage__text Экономия средств заказчика&nbsp;&mdash; минимум подготовительных работ, непрерывная эксплуатация объекта
+                .advantages__right
+                    .sub-advantage
+                        .sub-advantage__number 2
+                        .sub-advantage__text Инновационный метод фононной диагностики не&nbsp;требует изменения рабочего режима эксплуатации
+
+                .advantages__left.advantages__left_last
+                    .advantage.advantages__advantage
+                        .advantage__number 3000
+                        .advantage__text Ежегодно ДИАТЕХ проводит более 3000 экспертиз&nbsp;ПБ
+                .advantages__middle
+                    .sub-advantage
+                        .sub-advantage__number 3
+                        .sub-advantage__text Широкий диапазон методов исследования, новейшее оборудование
+                .advantages__right
+                    .sub-advantage
+                        .sub-advantage__number 4
+                        .sub-advantage__text Штат экспертов, аттестованных в&nbsp;различных&nbsp;областях согласно ФЗ&nbsp;116

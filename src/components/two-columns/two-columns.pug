@@ -1,0 +1,13 @@
+include ../../common/multiple-blocks
+
+mixin two-columns(attrs)
+    block
+    .two-columns&attributes(attrs)
+        .two-columns__row
+            .two-columns__column.two-columns__column_left
+                -createBlock('left')
+            .two-columns__column.two-columns__column_right
+                -createBlock('right')
+    -clearBlocks(['left', 'right'])
+
+

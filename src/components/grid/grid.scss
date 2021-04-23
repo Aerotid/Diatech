@@ -1,0 +1,93 @@
+@import '../../common/bootstrap';
+@import '../../common/variables';
+@import '../../common/mixins';
+@import '../../common/functions';
+@import '../../components/power-lines/variables';
+
+@mixin grid {
+  position: relative;
+
+  &__bg-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__bg,
+  &__video {
+    position: absolute;
+    object-fit: cover;
+    object-position: top right;
+    //object-position: center right;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    @media only screen and (max-width: $breakpoint-2) and (orientation: portrait) {
+      display: none;
+    }
+    @media only screen and (max-width: $breakpoint-x) and (orientation: landscape) {
+      object-position: bottom right;
+    }
+
+    &_mobile {
+      display: none;
+
+      @media only screen and (max-width: $breakpoint-2) and (orientation: portrait) {
+        display: block;
+        width: 100%;
+        object-position: center;
+      }
+    }
+
+    &_tube {
+      object-fit: contain;
+    }
+  }
+
+  &__inner-wrapper {
+    @include make-container();
+    margin-left: $power-line-offset;
+    margin-right: $power-line-offset;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+    justify-content: space-between;
+    align-items: stretch;
+    width: auto;
+    height: 100%;
+
+    @media screen and (max-width: $breakpoint-1-max) {
+      margin-left: $power-line-offset-mobile;
+      margin-right: $power-line-offset-mobile;
+    }
+  }
+
+  &__row {
+    @include make-row();
+    flex: 0 0 auto;
+  }
+
+  &__left {
+    @include make-col(6);
+  }
+
+  &__middle,
+  &__right {
+    @include make-col(3);
+  }
+
+  @media (max-width: $breakpoint-2 - 1) {
+    &__left {
+      @include make-col(12);
+    }
+
+    &__middle,
+    &__right {
+      @include make-col(0);
+    }
+  }
+}

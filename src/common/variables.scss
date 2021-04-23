@@ -1,0 +1,53 @@
+@import './functions.scss';
+
+$breakpoint-1: 320px;
+$breakpoint-1-max: 376px;
+$breakpoint-2-min: 480px;
+$breakpoint-2: 768px;
+$breakpoint-3: 1024px;
+$breakpoint-4: 1366px;
+$breakpoint-5: 1700px;
+$breakpoint-x: 830px;
+
+$breakpoint-height-1: 710px;
+
+$fhd-width: 1920px;
+$fhd-height: 1080px;
+$fhd-col-width: 64px;
+$mobil-col-width: 25px;
+$col-width: 100vw / 30;
+
+$horizontal-border-offset-min: 30px;
+$horizontal-border-offset-max: 60px;
+$horizontal-border-offset: #{smooth-value(
+  $horizontal-border-offset-min,
+  $horizontal-border-offset-max,
+  $breakpoint-2,
+  $fhd-width,
+  'w')
+};
+$vertical-border-offset: 25px;
+
+$font-avenir-next-cyr: 'AvenirNextCyr';
+$font-avenir-next-cyr-medium: 'AvenirNextCyrMedium';
+$font-avenir-next-cyr-bold: 'AvenirNextCyrBold';
+$font-bebas-neue: 'BebasNeue';
+$font-bebas-neue-bold: 'BebasNeueBold';
+
+$logo-main-color: #2a3252;
+$logo-sub-color: #dc174b;
+$color-1: #666;
+$color-2: #141414;
+$color-3: #425cff;
+$color-5: #1a1a1a;
+$color-6: #F5F6FF;
+$color-7: #353535;
+$color-8: #e4e4e4;
+$color-9: #1a1a1a;
+$color-10: #d2d8ff;
+$color-11: #e5e5e5;
+
+$width-1: 420px;
+$width-2: 260px;
+
+$min-top-space: 10px;

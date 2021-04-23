@@ -1,0 +1,84 @@
+@import '../../common/typography-mixins';
+@import '../../common/variables';
+
+.info-block-3 {
+    position: relative;
+
+    &__title {
+        @include title-1;
+
+        @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+            font-size: 30px;
+        }
+    }
+
+    &__main-text {
+        @include font-4;
+        max-width: $width-1;
+        margin-top: 40px;
+        padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+
+        @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+            margin-top: 10px;
+            padding-left: 10px;
+            font-size: 12px;
+        }
+    }
+
+    &__sub-text {
+        @include font-6;
+        max-width: $width-1;
+        margin-top: 15px;
+        padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+    }
+
+    &__buttons {
+        display: inline-flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+        margin-top: 40px;
+        padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+
+        @media (max-width: $breakpoint-4) {
+            display: none;
+        }
+
+        @media (max-height: 720px) {
+            display: none;
+        }
+    }
+
+    &__button {
+        min-width: 180px;
+        white-space: nowrap;
+    }
+
+    &__link {
+        margin-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+        display: inline-block;
+        margin-top: $link-offset;
+    }
+
+    @media (max-width: $breakpoint-4 - 1) {
+        &__main-text {
+            width: smooth-value(300px, $width-1, $breakpoint-2, $breakpoint-4, 'w');
+        }
+
+        &__sub-text {
+            width: smooth-value(300px, $width-1, $breakpoint-2, $breakpoint-4, 'w');
+        }
+    }
+
+    @media (max-width: $breakpoint-2 - 1) {
+        &__main-text {
+            width: $width-2;
+            margin-top: 15px;
+        }
+        &__sub-text {
+            width: $width-2;
+        }
+        &__link {
+            margin-top: 15px;
+        }
+    }
+}

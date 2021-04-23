@@ -1,0 +1,12 @@
+mixin info-block-5(title, text, image, attrs)
+    .info-block-5&attributes(attrs)
+        .anim-overflow
+            if title
+                .info-block-5__title
+                    .info-block-5__title-border
+                    != title
+            if text
+                .info-block-5__text!= text
+            if image && image.src
+                .info-block-5__container
+                    img.info-block-5__image(src=image.src)

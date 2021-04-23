@@ -1,0 +1,240 @@
+@import './variables';
+@import './functions';
+
+@mixin title-1 {
+  font-family: $font-bebas-neue-bold;
+  font-size: smooth-value(40px, 80px, $breakpoint-1, $fhd-width, 'w');
+  line-height: 1.2;
+  letter-spacing: 0.8px;
+  color: $color-2;
+  text-transform: uppercase;
+  overflow: hidden;
+
+  @media screen and (max-width: $breakpoint-4 - 1) {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
+  @media screen and (max-width: $breakpoint-1-max - 1) {
+    font-size: 38px;
+  }
+}
+
+@mixin title-2 {
+  @include title-1;
+  color: $color-3;
+}
+
+@mixin title-3 {
+  font-family: $font-bebas-neue-bold;
+  font-size: smooth-value(80px, 160px, $breakpoint-1, $fhd-width, 'w');
+  letter-spacing: 1.6px;
+  color: $color-2;
+  text-transform: uppercase;
+
+  @media screen and (max-width: $breakpoint-3 - 1) {
+    font-size: 80px;
+  }
+}
+
+@mixin title-4 {
+  @include title-1;
+  color: white;
+}
+
+@mixin title-5 {
+  font-family: $font-bebas-neue-bold;
+  font-size: smooth-value(16px, 24px, $breakpoint-2, $fhd-width, 'w');
+  letter-spacing: .2px;
+  color: $color-2;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+
+@mixin title-6 {
+  font-family: $font-bebas-neue-bold;
+  font-size: smooth-value(50px, 128px, $breakpoint-2, $fhd-width, 'w');
+  letter-spacing: .2px;
+  color: $color-2;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+
+@mixin title-7 {
+  font-family: $font-bebas-neue-bold;
+  font-size: smooth-value(48px, 128px, $breakpoint-2, $fhd-width, 'w');
+  color: white;
+  line-height: 1.18;
+
+  // @media screen and (max-width: $breakpoint-3 - 1) {
+  //   font-size: 80px;
+  // }
+
+  // @media screen and (min-width: $breakpoint-2) and (max-height: $breakpoint-2) {
+  //   font-size: smooth-value(40px, 80px, $breakpoint-1, $breakpoint-2, 'h');
+  // }
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    font-size: 48px;
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1) and (max-height: 520px) {
+    font-size: 40px;
+  }
+
+
+
+}
+
+@mixin title-8 {
+  font-family: $font-bebas-neue;
+  font-size: smooth-value(60px, 80px, $breakpoint-2, $fhd-width, 'w');
+  line-height: 1.2;
+  letter-spacing: 0.8px;
+  color: $color-3;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+@mixin font-1 {
+  font-family: $font-avenir-next-cyr-medium;
+  font-size: smooth-value(12px, 14px, $breakpoint-2, $fhd-width, 'w');
+  line-height: 1.7;
+  color: black;
+
+  // @media screen and (max-width: $breakpoint-2 - 1) {
+  //   font-size: 14px;
+  // }
+}
+
+@mixin font-2 {
+  @include font-1;
+  font-size: 14px;
+  color: rgba(black, .5);
+}
+
+@mixin font-3 {
+  font-family: $font-avenir-next-cyr-medium;
+  //font-size: smooth-value(12px, 14px, $breakpoint-2, $fhd-width, 'w');
+  font-size: 14px;
+  color: $color-1;
+}
+
+@mixin font-4 {
+  font-family: $font-avenir-next-cyr-bold;
+  font-size: smooth-value(16px, 20px, $breakpoint-1, $fhd-width, 'w');
+  line-height: 1.6;
+  color: $color-2;
+}
+
+@mixin font-5 {
+  font-family: $font-avenir-next-cyr-medium;
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-2;
+}
+
+@mixin font-6 {
+  @include font-4;
+  font-family: $font-avenir-next-cyr-medium;
+}
+
+@mixin font-8 {
+  font-family: $font-bebas-neue;
+  font-size: smooth-value(16px, 24px, $breakpoint-1, $fhd-width, 'w');
+  letter-spacing: 0.2px;
+  line-height: 0.83;
+  color: $color-3;
+}
+
+@mixin font-9 {
+  font-family: $font-avenir-next-cyr;
+  font-size: 14px;
+  color: $color-3;
+}
+
+@mixin font-9 {
+  font-family: $font-avenir-next-cyr-medium;
+  font-size: 14px;
+  color: $color-3;
+}
+
+@mixin font-10 {
+  font-family: $font-bebas-neue;
+  font-size: smooth-value(60px, 80px, $breakpoint-2, $fhd-width, 'w');
+  line-height: 1.2;
+  color: $color-3;
+}
+
+@mixin font-11 {
+  @include title-5;
+  color: $color-3;
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    font-size: 16px;
+  }
+}
+
+@mixin font-12 {
+  @include font-6;
+  line-height: 2.6;
+}
+
+@mixin font-13 {
+  font-family: $font-bebas-neue-bold;
+  font-size: smooth-value(45px, 128px, $breakpoint-1-max, $fhd-width, 'w');
+  line-height: 1;
+  color: $color-5;
+}
+
+@mixin font-14 {
+  font-family: $font-avenir-next-cyr-bold;
+  font-size: 14px;
+  line-height: 1;
+  color: $color-5;
+}
+
+@mixin  font-15 {
+  @include font-14;
+  font-family: $font-avenir-next-cyr-medium;
+}
+
+@mixin font-16 {
+  font-family: $font-avenir-next-cyr-medium;
+  font-size: smooth-value(14px, 18px, $breakpoint-2, $fhd-width, 'w');
+  line-height: 1.2;
+  color: $color-5;
+}
+
+@mixin font-17 {
+  font-family: $font-bebas-neue-bold;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@mixin font-18 {
+  font-family: $font-avenir-next-cyr-medium;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+@mixin font-19 {
+  @include font-10;
+  font-family: $font-bebas-neue-bold;
+  color: white;
+
+  @media screen and (max-width: $breakpoint-3 - 1) {
+    font-size: 40px;
+  }
+}
+
+@mixin font-20 {
+  @include font-3;
+  line-height: 1.85;
+}
+
+@mixin font-21 {
+  font-family: $font-bebas-neue-bold;
+  font-size: smooth-value(60px, 100px, 500px, 950px, 'h');
+  line-height: smooth-value(60px, 100px, 500px, 950px, 'h');
+  color: $color-5;
+}

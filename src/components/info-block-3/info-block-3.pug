@@ -1,0 +1,15 @@
+include ../button/button
+
+mixin info-block-3(title, mainText, subText, attrs, link)
+    .info-block-3&attributes(attrs)
+        .info-block-3__title!= title
+        .anim-overflow
+            .info-block-3__main-text!= mainText
+            if subText
+                .info-block-3__sub-text!= subText
+            if link && link.url && link.anchor
+                .info-block-3__buttons
+                    +button().btn_primary.btn_block.btn_outline.btn_watch.info-block-3__button
+                        span Смотреть видео
+                        span Смотреть дальше
+                    +button(link.anchor, link.url).btn_primary.btn_block.info-block-3__button(data-link-type='inner')

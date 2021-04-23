@@ -1,0 +1,32 @@
+@import '../power-lines/variables';
+@import '../../common/functions.scss';
+
+@mixin main-section {
+  padding: 0 $power-line-offset 0;
+
+  & .fp-tableCell {
+    &_padding-top,
+    &_padding-full {
+      padding-top: smooth-value(110px, 270px, $breakpoint-2, $fhd-height, 'h');
+    }
+
+    &_padding-bottom,
+    &_padding-full {
+      padding-bottom: smooth-value(95px, 200px, $breakpoint-2, $fhd-height, 'h');
+    }
+
+    @media (max-height: $breakpoint-2) {
+      &_padding-top,
+      &_padding-full {
+        padding-top: 110px;
+      }
+    }
+
+    @media (max-height: $breakpoint-2) {
+      &_padding-bottom,
+      &_padding-full {
+        padding-bottom: 95px;
+      }
+    }
+  }
+}

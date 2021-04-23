@@ -1,0 +1,42 @@
+.pulse {
+  overflow: hidden;
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  transform: translate(-50%, -50%);
+
+  &__canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__mask {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10000px rgba(255, 255, 255, 1);
+    z-index: 2;
+  }
+
+  &__shade {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px 35px rgba(255,255,255,1);
+    z-index: 2;
+  }
+}

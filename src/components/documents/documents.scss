@@ -1,0 +1,63 @@
+@import '../../common/typography-mixins';
+@import '../../components/info-block-1/variables';
+@import '../../common/bootstrap';
+@import '../power-lines/variables';
+@import '../../common/mixins';
+
+.documents {
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+
+  @media screen and (max-width: $breakpoint-1-max) {
+    margin-left: $power-line-offset-mobile;
+    margin-right: $power-line-offset-mobile;
+  }
+
+
+  &__title {
+    @include title-2;
+    padding-top: $title-vertical-offset;
+    padding-left: $fhd-col-width;
+    
+
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      padding-left: smooth-value(25px, 60px, $breakpoint-1, $fhd-width, 'w');
+    }
+  }
+
+  &__info-block {
+    @include plant-on-power-line;
+    &_right {
+      margin-top: 220px;
+    }
+    & .info-block-1__sub-text {
+      max-width: 444px;
+      font-size: 14px;
+    }
+
+    & .info-block-1__link {
+      padding-left: 20px;
+      background: url('../images/icon-file.png') no-repeat left bottom;
+    }
+  }
+
+  @media (max-width: $breakpoint-3 - 1) {
+    &__info-block {
+      margin-top: 60px;
+
+      & .info-block-1__sub-text {
+        max-width: none;
+      }
+    }
+
+    & .two-columns__column_right {
+      @include make-col(12);
+      order: 1;
+    }
+
+    & .two-columns__column_left {
+      @include make-col(12);
+      order: 2;
+    }
+  }
+}

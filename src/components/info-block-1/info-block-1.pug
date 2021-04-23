@@ -1,0 +1,13 @@
+mixin info-block-1(title, text, subText, link, attrs)
+    .info-block-1&attributes(attrs)
+        .anim-overflow
+            if title
+                .info-block-1__title
+                    .info-block-1__title-border
+                    != title
+            if text
+                    .info-block-1__text!= text
+            if subText
+                .info-block-1__sub-text!= subText
+            if link && link.url && link.anchor
+                a.info-block-1__link(href=link.url, data-link-type='inner')= link.anchor

@@ -1,0 +1,62 @@
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/two-columns/two-columns
+include ../../components/inner-first-screen/inner-first-screen
+include ../../components/info-block-4/info-block-4
+include ../../components/img-block/img-block
+include ../../common/multiple-blocks
+include ../../components/power-lines/power-lines
+include ../../components/preloader/preloader
+include ../../components/slider-navigation/slider-navigation
+
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../images/favicons/ru/icon-16.png')
+        link(rel='icon' type='image/png' sizes='48x48' href='../../images/favicons/ru/icon-48.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='../../images/favicons/ru/icon-96.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='../../images/favicons/ru/icon-192.png')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+    body
+        +sandwich-menu
+        #barba-wrapper
+            .barba-container(data-namespace='cases')
+                +header
+                .section.contrast
+
+                    .container-inner_cases_list
+                        +power-lines
+                        .container-page
+                            +info-block-4('Кейсы', null, {class: 'info-block-4_color-9'})
+
+                    .swiper-container.container-100
+
+                        .swiper-wrapper
+
+                            .swiper-slide(data-hash="case_gazprom")
+                                +img-block('../../images/cases/case_gazprom_main_img.jpg', {class: 'img-block__bg img-block__img_position'})
+                                +inner-first-screen('смотреть кейс', '/case_gazprom.html', {class: 'info-block-4_position-right-center'}, '<span data-title-item-anim>Подводный </span><br><span data-title-item-anim>переход через </span><br><span data-title-item-anim>реку Каму</span>', '<span data-title-item-anim>Газпром, Россия</span>', null, {class: 'inner-first-screen__cases-list inner-first-screen_transparent-bg'})
+                                +power-lines
+                            .swiper-slide(data-hash="case_cuulong")
+                                +img-block('../../images/cases/case_cuulong_main_img.jpg', {class: 'img-block__bg img-block__img_position'})
+                                +inner-first-screen('смотреть кейс', '/case_cuulong.html', {class: 'info-block-4_position-right-center'}, '<span data-title-item-anim>Райзер</span><br><span data-title-item-anim>на нефтяной </span><br><span data-title-item-anim>платформе</span>', '<span data-title-item-anim>Cuulong, Вьетнам</span>', null, {class: 'inner-first-screen__cases-list inner-first-screen_transparent-bg'})
+                                +power-lines
+                            .swiper-slide(data-hash="case_total")
+                                +img-block('../../images/cases/case_total_main_img.jpg', {class: 'img-block__bg img-block__img_position'})
+                                +inner-first-screen('смотреть кейс', '/case_total.html', {class: 'info-block-4_position-right-center'}, '<span data-title-item-anim>Сосуды под</span><br><span data-title-item-anim>давлением на</span><br> <span data-title-item-anim>судне FPSO</span>', '<span data-title-item-anim>Total E&P, Ангола</span>', null, {class: 'inner-first-screen__cases-list inner-first-screen_transparent-bg'})
+                                +power-lines
+                            .swiper-slide(data-hash="case_petronas")
+                                +img-block('../../images/cases/case_petronas_main_img.jpg', {class: 'img-block__bg img-block__img_position'})
+                                +inner-first-screen('смотреть кейс', '/case_petronas.html', {class: 'info-block-4_position-right-center'}, '<span data-title-item-anim>Диагностика </span><br><span data-title-item-anim>двустенного</span><br><span data-title-item-anim>резервуара</span>', '<span data-title-item-anim>Petronas, Малайзия</span>', null, {class: 'inner-first-screen__cases-list inner-first-screen_transparent-bg'})
+                                +power-lines
+                        .container-page
+                            .slider-navigation.slider-navigation_white.slider-navigation_cases-slider
+                                .slider-navigation__container
+                                    .slider-navigation__counter
+                                        .slider-navigation__current
+                                        .slider-navigation__total
+
+                                    .slider-navigation__items
+                    +footer({class: 'contrast_footer'})
+        +preloader

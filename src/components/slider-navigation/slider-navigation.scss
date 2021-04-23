@@ -1,0 +1,93 @@
+@import '../../common/variables';
+@import '../../common/typography-mixins';
+
+.slider-navigation {
+  //overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: center;
+  }
+  &__counter {
+    @include font-8;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  &__item {
+    cursor: pointer;
+    margin: -8px 3px -5px;
+    padding: 8px 0 5px;
+
+    &::before {
+      content: '';
+      display: block;
+      background-color: $color-3;
+      height: 3px;
+      width: 8px;
+      transition: .25s width;
+    }
+
+    &_active {
+      &::before {
+        width: 24px;
+      }
+    }
+  }
+
+  &__arrow {
+    align-self: flex-start;
+    width: 27px;
+    height: 11px;
+    cursor: pointer;
+
+    &.disabled {
+      cursor: default;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: $color-3;
+    }
+  }
+
+  &_white {
+    .slider-navigation__item {
+
+      &::before {
+        background: white;
+      }
+    }
+
+    .slider-navigation__counter {
+      color: white;
+    }
+  }
+
+  &_cases-slider {
+    position: absolute;
+    bottom: 35px;
+    z-index: 2;
+
+    @media only screen and (max-device-width: $breakpoint-x) and (orientation: landscape) {
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+}

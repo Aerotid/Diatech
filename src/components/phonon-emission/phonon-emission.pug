@@ -1,0 +1,24 @@
+include ../two-columns/two-columns
+include ../info-block-1/info-block-1
+include ../../common/multiple-blocks
+
+mixin phonon-emission
+    .phonon-emission
+        +two-columns
+            +set('left')
+                div.anim-overflow
+                    +info-block-1('<div class="thirdslide-infoblocks">Фононная эмиссия</div>', 'Результатом взаимодействия энергии (приложенной нагрузки) и материала является протекание в материале различных физических процессов — концентрации напряжений, деформаций, коррозии, усталостных повреждений, разрушений.', 'Фононная эмиссия наиболее интенсивна \n' +
+                    'в местах образования и развития дефектов, т.е. в тех местах, где наступают или возникли опасные условия эксплуатации. Диагностическое обследование сводится \n' +
+                    'к приему, регистрации, обработке, анализу \n' +
+                    'и интерпретации особенностей \n' +
+                    'и закономерностей распространения фононной эмиссии.\n', {
+                        url: '#',
+                        anchor: ''
+                    }, null)
+            +set('right')
+                div.anim-overflow
+                    .phonon-emission__title#anim Э + М = ФЭ
+                    .phonon-emission__subtext  <span class="phonon-emission__subtext_wrap"><span>Э</span>&nbsp;&mdash; энергия </span>  <span class="phonon-emission__subtext_wrap"><span>М</span>&nbsp;&mdash; материал </span>  <span class="phonon-emission__subtext_wrap"><span>ФЭ</span>&nbsp;&mdash; фононная эмиссия </span>
+                    .image-container
+                        .image-container__title Возникновение напряжения в&nbsp;кристаллической решетке
+                        img.image-container__img(src='../../images/phonon/1.jpg')

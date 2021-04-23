@@ -1,0 +1,21 @@
+include ../two-columns/two-columns
+include ../../common/multiple-blocks
+
+mixin list-1
+    .list__container
+        +two-columns
+            +set('left')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>УНИКАЛЬНЫЕ</div> <div class="text_nowrap" data-text-part>ТЕХНИЧЕСКИЕ ВОЗМОЖНОСТИ</div>', '<li ' +
+                    'class="info-block-6__item">Без ' +
+                    'остановки' +
+                    ' производственного процесса</li> <li class="info-block-6__item">В режиме реального времени</li> <li class="info-block-6__item">Диагностика труднодоступных объектов</li> <li class="info-block-6__item">100% покрытие тела ' +
+                    'объекта</li>')
+                    +info-block-6('<div class="text_nowrap" data-text-part>Финансовая</div> <div class="text_nowrap" data-text-part>выгода</div>', '<li ' +
+                    'class="info-block-6__item">Без остановки эксплуатации объекта</li> <li class="info-block-6__item">Экономия средств</li> <li ' +
+                    'class="info-block-6__item">Обеспечение безопасной работы объекта </li> <li class="info-block-6__item">Минимум подготовительных работ</li>')
+            +set('right')
+                .list__wrapper
+                    +info-block-6('<div class="text_nowrap" data-text-part>Высокая точность</div> <div class="text_nowrap" data-text-part>определения дефектов</div>', '<li ' +
+                    'class="info-block-6__item">Количество</li> <li class="info-block-6__item">Локация</li> <li class="info-block-6__item">Степень опасности</li> <li ' +
+                    'class="info-block-6__item">Размер</li> <li class="info-block-6__item">Тип</li>')

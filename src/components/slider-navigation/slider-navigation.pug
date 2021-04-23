@@ -1,0 +1,20 @@
+include ../../common/mixins
+
+mixin slider-navigation(itemCount, attrs)
+    -var total = itemCount;
+    .slider-navigation&attributes(attrs)
+        if (attrs.arrows)
+            .slider-navigation__arrow(data-direction='left')
+                +svg({name: 'arrow-left'})
+        .slider-navigation__container
+            .slider-navigation__counter
+                .slider-navigation__current 01
+                | /
+                .slider-navigation__total= `0${total}`
+            .slider-navigation__items
+                while itemCount > 0
+                    .slider-navigation__item(class=itemCount === total ? 'slider-navigation__item_active':'', data-id=total - itemCount)
+                    -itemCount--
+        if (attrs.arrows)
+            .slider-navigation__arrow(data-direction='right')
+                +svg({name: 'arrow-right'})

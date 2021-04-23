@@ -1,0 +1,16 @@
+@import '../../common/typography-mixins';
+@import '../power-lines/variables';
+
+.list {
+  &__container {
+    margin-top: 80px;
+    margin-right: $power-line-offset;
+    margin-left: $power-line-offset;
+  }
+  &__wrapper {
+    display: flex;
+    @media screen and (max-width: $breakpoint-4 - 1) {
+      flex-wrap: wrap;
+    }
+  }
+}

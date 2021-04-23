@@ -1,0 +1,19 @@
+mixin sandwich-menu
+    .sandwich-menu
+        +power-lines
+        .sandwich-menu__inner-wrapper
+            ul.sandwich-menu__list
+                li.sandwich-menu__item
+                    a.sandwich-menu__link(href='/company.html', data-link-type='menu') О компании
+                li.sandwich-menu__item
+                    a.sandwich-menu__link(href='/cases.html', data-link-type='menu') Кейсы
+                li.sandwich-menu__item
+                    a.sandwich-menu__link(href='/directions.html', data-link-type='menu') Услуги
+                    .anim-overflow
+                        ul.sandwich-menu__list.sandwich-menu__list--submenu
+                            li.sandwich-menu__item.sandwich-menu__item--submenu
+                                a.sandwich-menu__link.sandwich-menu__link--submenu(href='/phonon.html', data-link-type='menu') Метод фоннонной диагностики
+                li.sandwich-menu__item
+                    a.sandwich-menu__link(href='/reviews.html', data-link-type='menu') Отзывы
+                li.sandwich-menu__item
+                    a.sandwich-menu__link(href='/contacts.html', data-link-type='menu') Контакты

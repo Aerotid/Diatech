@@ -1,0 +1,84 @@
+@import './functions.scss';
+@import './variables.scss';
+
+@mixin section-top-offset {
+  padding-top: smooth-value(110px, 270px, $breakpoint-2, $fhd-height, 'h');
+
+  @media (max-height: $breakpoint-2) {
+    padding-top: 110px;
+  }
+}
+
+@mixin section-bottom-offset {
+  padding-bottom: smooth-value(95px, 200px, $breakpoint-2, $fhd-height, 'h');
+
+  @media (max-height: $breakpoint-2) {
+    padding-bottom: 95px;
+  }
+}
+
+@mixin section-bottom-offset-contacts {
+  padding-bottom: smooth-value(80px, 140px, $breakpoint-2, $fhd-height, 'h');
+
+  @media (max-height: $breakpoint-2) {
+    padding-bottom: 80px;
+  }
+}
+
+@mixin inner-section-top-offset {
+  padding-top: smooth-value(110px, 170px, $breakpoint-2, $fhd-height, 'h');
+
+  @media (max-height: $breakpoint-2) {
+    padding-top: 110px;
+  }
+}
+
+@mixin inner-section-top-offset-cases {
+  padding-top: smooth-value(205px, 350px, $breakpoint-2, $fhd-height, 'h');
+
+  @media (max-height: $breakpoint-2) {
+    padding-top: 205px;
+  }
+}
+
+@mixin inner-section-bottom-offset {
+  padding-bottom: smooth-value(95px, 300px, $breakpoint-2, $fhd-height, 'h');
+
+  @media (max-height: $breakpoint-2) {
+    padding-bottom: 95px;
+  }
+}
+
+@mixin plant-on-power-line {
+  transform: translateX(-1px);
+}
+
+@mixin main-slider-slide-top-offset {
+  padding-top: smooth-value(105px, 270px, $breakpoint-2, $fhd-height, 'h');
+
+  @media (max-height: $breakpoint-height-1) and (orientation: portrait) {
+    padding-top: 110px;
+  }
+  @media (max-height: $breakpoint-height-1) and (orientation: landscape) {
+    padding-top: 70px;
+  }
+}
+
+@mixin fixed-buttons-top-offset {
+  top: smooth-value(105px, 270px, $breakpoint-2, $fhd-height, 'h');
+
+  @media (max-height: $breakpoint-height-1) and (orientation: portrait) {
+    top: 110px;
+  }
+  @media (max-height: $breakpoint-height-1) and (orientation: landscape) {
+    top: 70px;
+  }
+}
+
+@mixin main-slider-slide-bottom-offset {
+  padding-bottom: smooth-value(110px, 200px, $breakpoint-2, $fhd-height, 'h');
+
+  @media (max-height: $breakpoint-height-1) and (orientation: portrait) {
+    padding-bottom: 0;
+  }
+}

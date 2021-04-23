@@ -1,0 +1,13 @@
+.scroll-up {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  padding: 20px;
+  z-index: 2;
+
+  @media screen and (max-width: $breakpoint-2 - 1) {
+    bottom: 60px;
+  }
+}

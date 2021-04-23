@@ -1,0 +1,302 @@
+@import '../../common/typography-mixins';
+@import '../../common/variables';
+
+.reviews {
+  position: relative;
+
+  &__texts {
+    max-height: 310px;
+    height: 310px;
+    max-width: 450px;
+    margin-left: $fhd-col-width;
+    //margin-right: 145px;
+    overflow: hidden;
+
+    @media screen and (max-width: $breakpoint-3 - 1) {
+      max-height: 300px;
+      height: smooth-value(200px, 310px, $breakpoint-1, $fhd-width, 'h');
+    }
+
+    @media screen and (max-width: $breakpoint-2) {
+      margin-left: $mobil-col-width;
+      max-height: 275px;
+      height: auto;
+      opacity: .6;
+      
+    }
+
+    @media screen and (max-width: $breakpoint-1-max) {
+      margin-left: $power-line-offset-mobile;
+      margin-right: $power-line-offset-mobile;
+      padding-left: $mobil-col-width;
+    }
+  }
+
+  &__text {
+    @include font-20;
+
+    @media screen and (max-width: $breakpoint-2) {
+      width: 100%;
+    }
+
+  }
+
+  &__wrapper {
+    margin-left: $fhd-col-width;
+    max-width: smooth-value(245px, 570px, $breakpoint-3, $fhd-width, 'w');
+    overflow: hidden;
+    z-index: 15;
+
+    @media screen and (max-width: $breakpoint-2) {
+      max-width: 260px;
+      margin-left: $mobil-col-width;
+      color: #fff;
+      // width: 60%;
+      padding: $mobil-col-width;
+    }
+
+    @media screen and (max-width: $breakpoint-1-max) {
+      padding-left: $power-line-offset-mobile;
+      padding-right: $power-line-offset-mobile;
+    }
+  }
+
+  &__companies {
+    &-arrow {
+      background: url(../images/arrow-slider.png) no-repeat center;
+      width: 15px;
+      height: 15px;
+      display: none;
+      position: absolute;
+      top: 50%;
+      outline: none;
+
+      @media screen and (max-width: $breakpoint-2) {
+        display: block;
+      }
+
+      &_prev {
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      &_next {
+        transform: translateY(-50%) rotate(180deg);
+        left: 30px;
+      }
+    }
+  }
+
+  &__company {
+    @include title-1;
+    hyphens: manual;
+
+    @media screen and (max-width: $breakpoint-2) {
+      color: #fff;
+    }
+  }
+
+  &__counter {
+    @include font-1;
+    opacity: .8;
+    margin-top: 30px;
+
+    @media screen and (max-width: $breakpoint-2) {
+      color: #fff;
+      font-size: 14px;
+      position: relative;
+      width: 100px;
+      padding-left: 60px;
+    }
+  }
+
+  &__company-selector {
+    position: absolute;
+    left: 100%;
+    top: -70px;
+    overflow: hidden;
+
+    @media screen and (max-width: $breakpoint-3 - 1) {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      height: 70px;
+      background-color: rgba(255,255,255,.4);
+      //filter: blur(35px);
+      pointer-events: none;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      height: 160px;
+      background-color: rgba(255,255,255,.5);
+      //filter: blur(45px);
+      pointer-events: none;
+    }
+
+    &-wrapper {
+      padding-top: 70px;
+      height: 400px;
+      max-height: 400px;
+      box-sizing: border-box;
+
+    }
+  }
+
+  &__company-selector-item {
+    position: relative;
+    max-width: smooth-value(115px, 195px, $breakpoint-3, $fhd-width, 'w');
+    @include font-9;
+    color: rgba(66, 99, 255, .7);
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 25%;
+      background: linear-gradient(to left, white, transparent);
+    }
+  }
+
+  &__footer {
+    //margin-top: 100px;
+
+    @media screen and (max-width: $breakpoint-3 - 1) {
+      margin-top: 30px;
+    }
+
+    @media screen and (max-width: $breakpoint-1-max) {
+      margin-left: $power-line-offset-mobile;
+      margin-right: $power-line-offset-mobile;
+      width: auto;
+    }
+
+    .two-columns__column.two-columns__column_right {
+      @media screen and (max-width: $breakpoint-2) {
+        background-color: #fff;
+        margin-bottom: $mobil-col-width;
+      }
+    }
+  }
+
+  &__link,
+  &__year {
+    margin-left: $fhd-col-width;
+
+    @media screen and (max-width: $breakpoint-2) {
+      // padding-left: $mobil-col-width;
+      margin-left: $mobil-col-width;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+  }
+
+  &__year {
+    @include font-4;
+
+    @media screen and (max-width: $breakpoint-1-max) {
+      font-size: 20px;
+    }
+  }
+
+  &__link-text {
+    margin-left: 10px;
+  }
+
+
+  .two-columns__column_left {
+    @media screen and (max-width: $breakpoint-2) {
+      order: 2;
+    }
+  }
+
+  .two-columns__column_right {
+    @media screen and (max-width: $breakpoint-2) {
+      margin-bottom: 50px;
+      background-color: $color-3;
+
+    }
+
+    
+  }
+
+  .two-columns__column {
+    @media screen and (max-width: $breakpoint-2) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-1-max) {
+
+  .inner-first-screen_reviews {
+    padding-left: 0;
+    padding-right: 0;
+
+    .inner-first-screen__title {
+      // font-size: smooth-value(80px, 128px, $breakpoint-1-max, $fhd-width, 'w');
+      margin-left: $power-line-offset-mobile;
+
+      // @media screen and (max-width: $breakpoint-2 - 1) {
+      //   font-size: 80px;
+      // }
+      // @media screen and (max-width: $breakpoint-1-max - 1) {
+      //   font-size: 48px;
+      // }
+    }
+  }
+  
+}
+
+[data-namespace="reviews"] {
+  .container-inner_cases_list {
+    @media screen and (max-width: $breakpoint-2 - 1) {
+      display: none;
+
+    } 
+  }
+
+  .inner-first-screen_reviews.inner-first-screen__cases-list {
+    @media (max-width: $breakpoint-2 - 1) {
+      padding-top: 110px;
+      padding-bottom: $mobil-col-width;
+    }
+  }
+}
+
+._is-reviews {
+  @media (max-height: $breakpoint-2 - 1) {
+    //overflow: visible!important;
+    body {
+      //overflow: visible!important;
+    }
+    .menu--show {
+      overflow: hidden!important;
+    }
+  }
+}
+
+.reviews__company-selector-item.swiper-slide.swiper-slide-active {
+  color: rgba(66, 99, 255, 1);
+}

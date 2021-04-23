@@ -1,0 +1,85 @@
+@import '../../components/power-lines/variables';
+@import '../../common/mixins';
+
+
+.container-page {
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+
+  &_center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: $breakpoint-x) {
+    & .info-block-4 {
+      display: none;
+      padding-top: 0;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-1-max) {
+    margin-left: $power-line-offset-mobile;
+    margin-right: $power-line-offset-mobile;
+  }
+}
+
+.container-inner {
+  padding-top: 80px;
+  @include section-bottom-offset;
+
+  &_center {
+    height: 100vh;
+  }
+}
+
+.container-phonon {
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+
+  @media screen and (max-width: $breakpoint-1-max) {
+    margin-left: $power-line-offset-mobile;
+    margin-right: $power-line-offset-mobile;
+  }
+}
+.container_case-inner {
+  margin-bottom: 60px;
+  padding-top: 40px;
+  //will-change: transform;
+
+  @media (max-width: $breakpoint-2 - 1) {
+    margin-bottom: 0;
+    padding-top: 50px;
+  }
+}
+
+.container-inner_cases_list {
+  padding-top: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: white;
+
+  @media (max-width: $breakpoint-2 - 1) {
+    padding-top: 95px;
+  }
+}
+
+.container-100 {
+  height: 100vh;
+
+  //@media (max-width: $breakpoint-2 - 1) {
+  //  height: 100%;
+  //}
+}
+
+.container_contacts {
+  @include section-bottom-offset;
+}
+
+.container_contacts-top {
+  @include section-bottom-offset-contacts;
+}

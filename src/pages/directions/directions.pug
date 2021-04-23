@@ -1,0 +1,65 @@
+include ../../components/preloader/preloader
+include ../../components/inner-first-screen/inner-first-screen
+include ../../components/info-block-1/info-block-1
+include ../../components/info-block-2/info-block-2
+include ../../components/info-block-3/info-block-3
+include ../../components/directions-map/directions-map
+include ../../components/activity-directions/activity-directions
+include ../../components/advantages/advantages
+include ../../components/advantages-directions/advantages-directions
+include ../../components/adjacent-pages/adjacent-pages
+include ../../components/power-lines/power-lines
+include ../../components/scroll-down/scroll-down
+include ../../components/scroll-up/scroll-up
+include ../../common/multiple-blocks
+
+doctype html
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../images/favicons/ru/icon-16.png')
+        link(rel='icon' type='image/png' sizes='48x48' href='../../images/favicons/ru/icon-48.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='../../images/favicons/ru/icon-96.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='../../images/favicons/ru/icon-192.png')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+    body
+        +sandwich-menu
+        #barba-wrapper
+            .barba-container(data-namespace='directions')
+                +header({class: 'contrast_header'})
+                div#fullpage
+                    .section.contrast
+                        +inner-first-screen('<div data-text-part>Услуги</div>', null, {class: 'info-block-4_position-top-left'}, '<div data-text-part>Услуги</div>', 'Весь комплекс работ по ' +
+                        'техническому диагностированию и экспертизе ' +
+                            'промышленной ' +
+                        'безопасности на опасных производственных ' +
+                        'объектах', '../../images/directions/bg.jpg')
+                            +set('bottom')
+                                +scroll-down({class: 'inner-first-screen__scroll-down inner-first-screen__scroll-down_mobil-hide'}, true)
+                        +power-lines
+                    .section
+                        .tail
+                            +power-lines
+                            +two-columns
+                                +set('left')
+                                +set('right')
+                                    +info-block-1('<div data-text-part>Техническая</div> <div data-text-part>диагностика</div>', null,
+                                    'Обследование опасного производственного объекта с&nbsp;целью определения его технического состояния, а&nbsp;именно: определение наличия ' +
+                                    'дефектов и&nbsp;повреждений; степени износа; правильности функционирования и&nbsp;другое.', {
+                                        url: '#',
+                                        anchor: 'Свидетельство ЛНК.pdf'
+                                    }, {class: 'activity-directions__info-block activity-directions__info-block_top activity-directions__info-block_anim'})
+                            +directions-map
+                            +activity-directions
+                            +advantages-directions('<div data-text-part>ЭКСПЕРТИЗА</div><div data-text-part>ПРОМЫШЛЕННОЙ</div><div data-text-part>БЕЗОПАСНОСТИ</div>',
+                            'Подтверждение ' +
+                            'соответствия объекта требованиям промышленной безопасности, утвержденными законодательством РФ. В&nbsp;результате прохождения процедуры выдается ' +
+                            'заключение.', {class: 'main-rest__advantages'}, {url: '#', anchor: 'Лицензия на проведение ЭПБ.pdf'})
+                            +adjacent-pages(
+                            {bg: '../../images/adjacent/cases.jpg', name: 'кейсы', href: '/cases.html'},
+                            {bg: '../../images/adjacent/contacts.jpg', name: 'отзывы', href: '/reviews.html'}
+                            )
+                            +scroll-up({class: 'tail__scroll-up'})
+                +footer({class: 'contrast_footer'})
+        +preloader

@@ -1,0 +1,19 @@
+mixin phonon-equipment
+    .phonon-equipment
+        +two-columns
+            +set('left')
+            +set('right')
+                div.anim-overflow
+                    +info-block-1('<div class="thirdslide-infoblocks">Фононное</div> <div class="thirdslide-infoblocks">оборудование</div>', 'Компактное переносное и быстро ' +
+                    'развертываемое блочное оборудование.', null, {
+                        url: '#',
+                        anchor: ''
+                    }, null)
+        .phonon-equipment__container
+            img.phonon-equipment__image(src='../../images/phonon/2.jpg')
+            .phonon-equipment__marker.phonon-equipment__marker_first Программное<br>обеспечение ДИАТЕХ
+            .phonon-equipment__marker.phonon-equipment__marker_second Уравляющий<br>компьютер
+            .phonon-equipment__marker.phonon-equipment__marker_three Блок сбора данных
+            .phonon-equipment__marker.phonon-equipment__marker_four Магнитный<br>держатель
+            .phonon-equipment__marker.phonon-equipment__marker_five Преобразователь фононной эмиссии
+            .phonon-equipment__marker.phonon-equipment__marker_six Блок радио-синхронизации

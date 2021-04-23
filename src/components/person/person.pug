@@ -1,0 +1,10 @@
+mixin person(photo, position, name, info, attrs)
+    .person&attributes(attrs)
+        if photo
+            img.person__photo(src=`${photo}`)
+        else
+            .person__stub
+        .person__wrapper
+            .person__position!= position
+            .person__name!= name
+            .person__info!= info

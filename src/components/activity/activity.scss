@@ -1,0 +1,51 @@
+@import '../../common/typography-mixins';
+@import '../../components/info-block-1/variables';
+@import '../../common/bootstrap';
+@import '../power-lines/variables';
+@import '../../common/mixins';
+
+.activity {
+  margin-left: $power-line-offset;
+  margin-right: $power-line-offset;
+
+  &__titles {
+    min-height: smooth-value(160px, 242px, $breakpoint-3, $fhd-width, 'w');
+
+    @media (max-width: $breakpoint-3 - 1) {
+      min-height: auto;
+    }
+  }
+
+  &__title {
+    @include title-2;
+    padding-top: smooth-value(0px, $title-vertical-offset, $breakpoint-1, $fhd-width, 'w');
+    padding-left: smooth-value(25px, $fhd-col-width, $breakpoint-1, $fhd-width, 'w');
+  }
+
+  &__info-block {
+    &_right {
+      margin-top: 220px;
+    }
+  }
+
+  @media (max-width: $breakpoint-3 - 1) {
+    &__info-block {
+      margin-top: 20px;
+      margin-bottom: 40px;
+
+      & .info-block-1__sub-text {
+        max-width: none;
+      }
+    }
+
+    & .two-columns__column_right {
+      @include make-col(12);
+      order: 1;
+    }
+
+    & .two-columns__column_left {
+      @include make-col(12);
+      order: 2;
+    }
+  }
+}

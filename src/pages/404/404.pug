@@ -1,0 +1,43 @@
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/case-top/case-top
+include ../../components/info-block-1/info-block-1
+include ../../components/inner-first-screen/inner-first-screen
+include ../../components/img-block/img-block
+include ../../components/two-columns/two-columns
+include ../../common/multiple-blocks
+include ../../components/power-lines/power-lines
+include ../../components/preloader/preloader
+include ../../components/adjacent-pages/adjacent-pages
+include ../../components/scroll-up/scroll-up
+
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../images/favicons/ru/icon-16.png')
+        link(rel='icon' type='image/png' sizes='48x48' href='../../images/favicons/ru/icon-48.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='../../images/favicons/ru/icon-96.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='../../images/favicons/ru/icon-192.png')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+    body
+        +sandwich-menu
+        #barba-wrapper
+            .barba-container(data-namespace='404')
+                +header
+                +power-lines
+
+                .container-inner.container-inner_center
+                    .container-page.container-page_center
+                        +two-columns({class: 'two-columns_center'})
+                            +set('left')
+                                div.anim-overflow
+                                    h1.title.title_404
+                                        span 404
+                                        span Данная страница не найдена
+                            +set('right')
+                                div.anim-overflow
+                                    .link__container
+                                        a(href='/' data-link-type="inner").link.link_404 Перейти на главную
+                +footer
+        +preloader
